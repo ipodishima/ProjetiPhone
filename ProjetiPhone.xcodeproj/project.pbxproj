@@ -21,6 +21,10 @@
 		046B20321619CBB3003DF181 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046B20131619CBB3003DF181 /* Foundation.framework */; };
 		046B203A1619CBB4003DF181 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 046B20381619CBB4003DF181 /* InfoPlist.strings */; };
 		046B203D1619CBB4003DF181 /* ProjetiPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046B203C1619CBB4003DF181 /* ProjetiPhoneTests.m */; };
+		0477AF70161C65E7007442FB /* CoursListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF6F161C65E7007442FB /* CoursListViewController.m */; };
+		0477AF74161C67F5007442FB /* MyProfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF73161C67F5007442FB /* MyProfilViewController.m */; };
+		0477AF76161C6900007442FB /* 140-gradhat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0477AF75161C6900007442FB /* 140-gradhat.png */; };
+		0477AF78161C6939007442FB /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 0477AF77161C6939007442FB /* 111-user.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,12 @@
 		046B20391619CBB4003DF181 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		046B203B1619CBB4003DF181 /* ProjetiPhoneTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjetiPhoneTests.h; sourceTree = "<group>"; };
 		046B203C1619CBB4003DF181 /* ProjetiPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjetiPhoneTests.m; sourceTree = "<group>"; };
+		0477AF6E161C65E7007442FB /* CoursListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursListViewController.h; sourceTree = "<group>"; };
+		0477AF6F161C65E7007442FB /* CoursListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursListViewController.m; sourceTree = "<group>"; };
+		0477AF72161C67F5007442FB /* MyProfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfilViewController.h; sourceTree = "<group>"; };
+		0477AF73161C67F5007442FB /* MyProfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfilViewController.m; sourceTree = "<group>"; };
+		0477AF75161C6900007442FB /* 140-gradhat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "140-gradhat.png"; sourceTree = "<group>"; };
+		0477AF77161C6939007442FB /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +122,8 @@
 		046B20171619CBB3003DF181 /* ProjetiPhone */ = {
 			isa = PBXGroup;
 			children = (
+				0477AF71161C679A007442FB /* Profil */,
+				0477AF6D161C64C4007442FB /* Cours */,
 				046B20201619CBB3003DF181 /* AppDelegate.h */,
 				046B20211619CBB3003DF181 /* AppDelegate.m */,
 				046B20181619CBB3003DF181 /* Supporting Files */,
@@ -150,6 +162,26 @@
 				046B20381619CBB4003DF181 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0477AF6D161C64C4007442FB /* Cours */ = {
+			isa = PBXGroup;
+			children = (
+				0477AF6E161C65E7007442FB /* CoursListViewController.h */,
+				0477AF75161C6900007442FB /* 140-gradhat.png */,
+				0477AF6F161C65E7007442FB /* CoursListViewController.m */,
+			);
+			name = Cours;
+			sourceTree = "<group>";
+		};
+		0477AF71161C679A007442FB /* Profil */ = {
+			isa = PBXGroup;
+			children = (
+				0477AF72161C67F5007442FB /* MyProfilViewController.h */,
+				0477AF73161C67F5007442FB /* MyProfilViewController.m */,
+				0477AF77161C6939007442FB /* 111-user.png */,
+			);
+			name = Profil;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +259,8 @@
 				046B20241619CBB3003DF181 /* Default.png in Resources */,
 				046B20261619CBB3003DF181 /* Default@2x.png in Resources */,
 				046B20281619CBB3003DF181 /* Default-568h@2x.png in Resources */,
+				0477AF76161C6900007442FB /* 140-gradhat.png in Resources */,
+				0477AF78161C6939007442FB /* 111-user.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +297,8 @@
 			files = (
 				046B201E1619CBB3003DF181 /* main.m in Sources */,
 				046B20221619CBB3003DF181 /* AppDelegate.m in Sources */,
+				0477AF70161C65E7007442FB /* CoursListViewController.m in Sources */,
+				0477AF74161C67F5007442FB /* MyProfilViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +464,7 @@
 				046B20421619CBB4003DF181 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		046B20431619CBB4003DF181 /* Build configuration list for PBXNativeTarget "ProjetiPhoneTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +473,7 @@
 				046B20451619CBB4003DF181 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

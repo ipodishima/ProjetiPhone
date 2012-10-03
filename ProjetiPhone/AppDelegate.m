@@ -7,15 +7,40 @@
 //
 
 #import "AppDelegate.h"
+#import "CoursListViewController.h"
+#import "MyProfilViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    self.tabBarController = [[UITabBarController alloc] init];
+
+    
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+    MyProfilViewController *myProfilVC = [[MyProfilViewController alloc] init];
+    UITabBarItem *tabBarItem0 = [[UITabBarItem alloc] initWithTitle:@"Mon Profil" image:[UIImage imageNamed:@"111-user.png"] tag:0];
+    myProfilVC.tabBarItem = tabBarItem0;
+    
+    
+    CoursListViewController *coursLVC = [[CoursListViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    UINavigationController *coursNC = [[UINavigationController alloc] initWithRootViewController:coursLVC];
+    coursLVC.title = @"Cours";
+    [coursNC setNavigationBarHidden:NO];
+    
+    UITabBarItem *tabBarItem3 = [[UITabBarItem alloc] initWithTitle:@"Cours" image:[UIImage imageNamed:@"140-gradhat.png"] tag:3];
+    coursLVC.tabBarItem = tabBarItem3;
+    
+    
+    [self.tabBarController setViewControllers:[NSArray arrayWithObjects:myProfilVC, coursNC,  nil]];
+    [self.window setRootViewController:self.tabBarController];
+    
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
