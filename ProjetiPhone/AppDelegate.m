@@ -10,6 +10,7 @@
 #import "CoursListViewController.h"
 #import "MyProfilViewController.h"
 #import "WineListViewController.h"
+#import "VideoListViewController.h"
 
 @implementation AppDelegate
 
@@ -45,8 +46,17 @@
     UITabBarItem *tabBarItem3 = [[UITabBarItem alloc] initWithTitle:@"Cours" image:[UIImage imageNamed:@"140-gradhat.png"] tag:3];
     coursLVC.tabBarItem = tabBarItem3;
     
+    VideoListViewController *videoLVC = [[VideoListViewController alloc] initWithStyle:UITableViewStylePlain];
     
-    [self.tabBarController setViewControllers:[NSArray arrayWithObjects:myProfilVC, wineNC, coursNC, nil]];
+    UINavigationController *videoNC = [[UINavigationController alloc] initWithRootViewController:videoLVC];
+    videoLVC.title = @"Videos";
+    [videoNC setNavigationBarHidden:NO];
+    
+    UITabBarItem *tabBarItem2 = [[UITabBarItem alloc] initWithTitle:@"Videos" image:[UIImage imageNamed:@"70-tv.png"] tag:2];
+    videoLVC.tabBarItem = tabBarItem2;
+    
+    
+    [self.tabBarController setViewControllers:[NSArray arrayWithObjects:myProfilVC, wineNC, coursNC, videoNC, nil]];
     [self.window setRootViewController:self.tabBarController];
     
     [self.window makeKeyAndVisible];

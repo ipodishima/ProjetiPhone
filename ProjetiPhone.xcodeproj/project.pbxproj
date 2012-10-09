@@ -29,6 +29,9 @@
 		0477AF7F161C7B2C007442FB /* WineListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF7E161C7B2C007442FB /* WineListViewController.m */; };
 		0477AF81161C7D3C007442FB /* 142-wine-bottle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0477AF80161C7D3C007442FB /* 142-wine-bottle.png */; };
 		0477AF87161C7EEC007442FB /* DetailWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF86161C7EEC007442FB /* DetailWineViewController.m */; };
+		04A47DB21624429600791595 /* 70-tv.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A47DB11624429600791595 /* 70-tv.png */; };
+		04A47DB5162442CD00791595 /* VideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A47DB4162442CD00791595 /* VideoListViewController.m */; };
+		04A47DB81624444700791595 /* DetailVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A47DB71624444700791595 /* DetailVideoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,11 @@
 		0477AF80161C7D3C007442FB /* 142-wine-bottle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "142-wine-bottle.png"; sourceTree = "<group>"; };
 		0477AF85161C7EEC007442FB /* DetailWineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailWineViewController.h; sourceTree = "<group>"; };
 		0477AF86161C7EEC007442FB /* DetailWineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailWineViewController.m; sourceTree = "<group>"; };
+		04A47DB11624429600791595 /* 70-tv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "70-tv.png"; sourceTree = "<group>"; };
+		04A47DB3162442CD00791595 /* VideoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListViewController.h; sourceTree = "<group>"; };
+		04A47DB4162442CD00791595 /* VideoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListViewController.m; sourceTree = "<group>"; };
+		04A47DB61624444700791595 /* DetailVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVideoViewController.h; sourceTree = "<group>"; };
+		04A47DB71624444700791595 /* DetailVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVideoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,7 @@
 		046B20171619CBB3003DF181 /* ProjetiPhone */ = {
 			isa = PBXGroup;
 			children = (
+				04A47DAF1624421600791595 /* Video */,
 				0477AF7C161C7AE0007442FB /* Wine */,
 				0477AF71161C679A007442FB /* Profil */,
 				0477AF6D161C64C4007442FB /* Cours */,
@@ -208,6 +217,18 @@
 				0477AF86161C7EEC007442FB /* DetailWineViewController.m */,
 			);
 			name = Wine;
+			sourceTree = "<group>";
+		};
+		04A47DAF1624421600791595 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				04A47DB11624429600791595 /* 70-tv.png */,
+				04A47DB3162442CD00791595 /* VideoListViewController.h */,
+				04A47DB4162442CD00791595 /* VideoListViewController.m */,
+				04A47DB61624444700791595 /* DetailVideoViewController.h */,
+				04A47DB71624444700791595 /* DetailVideoViewController.m */,
+			);
+			name = Video;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +309,7 @@
 				0477AF76161C6900007442FB /* 140-gradhat.png in Resources */,
 				0477AF78161C6939007442FB /* 111-user.png in Resources */,
 				0477AF81161C7D3C007442FB /* 142-wine-bottle.png in Resources */,
+				04A47DB21624429600791595 /* 70-tv.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +351,8 @@
 				0477AF7B161C740A007442FB /* DetailCoursViewController.m in Sources */,
 				0477AF7F161C7B2C007442FB /* WineListViewController.m in Sources */,
 				0477AF87161C7EEC007442FB /* DetailWineViewController.m in Sources */,
+				04A47DB5162442CD00791595 /* VideoListViewController.m in Sources */,
+				04A47DB81624444700791595 /* DetailVideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
