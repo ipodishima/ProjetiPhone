@@ -11,6 +11,8 @@
 #import "MyProfilViewController.h"
 #import "WineListViewController.h"
 #import "VideoListViewController.h"
+#import "AboutViewController.h"
+#import "CommandeListViewController.h"
 
 @implementation AppDelegate
 
@@ -26,6 +28,10 @@
     MyProfilViewController *myProfilVC = [[MyProfilViewController alloc] init];
     UITabBarItem *tabBarItem0 = [[UITabBarItem alloc] initWithTitle:@"Mon Profil" image:[UIImage imageNamed:@"111-user.png"] tag:0];
     myProfilVC.tabBarItem = tabBarItem0;
+    
+    AboutViewController *aboutVC = [[AboutViewController alloc] init];
+    UITabBarItem *tabBarItem4 = [[UITabBarItem alloc] initWithTitle:@"À Propos" image:[UIImage imageNamed:@"90-life-buoy.png"] tag:4];
+    aboutVC.tabBarItem = tabBarItem4;
     
     WineListViewController *wineLVC = [[WineListViewController alloc] initWithStyle:UITableViewStylePlain];
     
@@ -56,7 +62,17 @@
     videoLVC.tabBarItem = tabBarItem2;
     
     
-    [self.tabBarController setViewControllers:[NSArray arrayWithObjects:myProfilVC, wineNC, coursNC, videoNC, nil]];
+    CommandeListViewController *commandeLVC = [[CommandeListViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    UINavigationController *commandeNC = [[UINavigationController alloc] initWithRootViewController:commandeLVC];
+    commandeLVC.title = @"Mes Comamndes";
+    [commandeNC setNavigationBarHidden:NO];
+    
+    UITabBarItem *tabBatItem5 = [[UITabBarItem alloc] initWithTitle:@"Mes Commandes" image:[UIImage imageNamed:@"172-pricetag.png"] tag:5];
+    commandeLVC.tabBarItem = tabBatItem5;
+    
+    
+    [self.tabBarController setViewControllers:[NSArray arrayWithObjects:myProfilVC, wineNC, coursNC, videoNC, commandeNC, aboutVC, nil]];
     [self.window setRootViewController:self.tabBarController];
     
     [self.window makeKeyAndVisible];

@@ -1,19 +1,19 @@
 //
-//  CoursListViewController.m
+//  CommandeListViewController.m
 //  ProjetiPhone
 //
-//  Created by Johan Delouche on 03/10/12.
+//  Created by Johan Delouche on 09/10/12.
 //  Copyright (c) 2012 Johan Delouche. All rights reserved.
 //
 
-#import "CoursListViewController.h"
-#import "DetailCoursViewController.h"
+#import "CommandeListViewController.h"
+#import "DetailCommandeViewController.h"
 
-@interface CoursListViewController ()
+@interface CommandeListViewController ()
 
 @end
 
-@implementation CoursListViewController
+@implementation CommandeListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,14 +27,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+     _listOfCommande = [[NSArray alloc] initWithObjects:@"commande 1", @"commande 2",@"commande 3", @"commande 4",@"commande 5",@"commande 6",@"commande 7",@"commande 8",@"commande 9", nil];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    _listOfCours = [[NSArray alloc] initWithObjects:@"cours 1", @"cours 2",@"cours 3", @"cours 4",@"cours 5",@"cours 6",@"cours 7",@"cours 8",@"cours 9", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,21 +57,20 @@
 {
 
     // Return the number of rows in the section.
-    return [_listOfCours count];
+    return [_listOfCommande count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    cell.textLabel.text = [_listOfCours objectAtIndex:[indexPath row]];
-    
-    // Configure the cell...
+    cell.textLabel.text = [_listOfCommande objectAtIndex:[indexPath row]];
     
     return cell;
 }
@@ -125,9 +125,10 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-DetailCoursViewController *detailCoursVC = [[DetailCoursViewController alloc] init];
-detailCoursVC.textToShow = [_listOfCours objectAtIndex:[indexPath row]];
-[self.navigationController pushViewController:detailCoursVC animated:YES];
+    
+    DetailCommandeViewController *detailCommandeVC = [[DetailCommandeViewController alloc] init];
+    detailCommandeVC.textToShow = [_listOfCommande objectAtIndex:[indexPath row]];
+    [self.navigationController pushViewController:detailCommandeVC animated:YES];
 }
 
 @end
