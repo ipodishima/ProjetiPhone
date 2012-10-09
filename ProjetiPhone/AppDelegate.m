@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "CoursListViewController.h"
 #import "MyProfilViewController.h"
+#import "WineListViewController.h"
 
 @implementation AppDelegate
 
@@ -25,6 +26,15 @@
     UITabBarItem *tabBarItem0 = [[UITabBarItem alloc] initWithTitle:@"Mon Profil" image:[UIImage imageNamed:@"111-user.png"] tag:0];
     myProfilVC.tabBarItem = tabBarItem0;
     
+    WineListViewController *wineLVC = [[WineListViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    UINavigationController *wineNC = [[UINavigationController alloc] initWithRootViewController:wineLVC];
+    wineLVC.title = @"Vins";
+    [wineNC setNavigationBarHidden:NO];
+    
+    UITabBarItem *tabBatItem1 = [[UITabBarItem alloc] initWithTitle:@"Vins" image:[UIImage imageNamed:@"142-wine-bottle.png"] tag:1];
+    wineLVC.tabBarItem = tabBatItem1;
+    
     
     CoursListViewController *coursLVC = [[CoursListViewController alloc] initWithStyle:UITableViewStylePlain];
     
@@ -36,7 +46,7 @@
     coursLVC.tabBarItem = tabBarItem3;
     
     
-    [self.tabBarController setViewControllers:[NSArray arrayWithObjects:myProfilVC, coursNC,  nil]];
+    [self.tabBarController setViewControllers:[NSArray arrayWithObjects:myProfilVC, wineNC, coursNC, nil]];
     [self.window setRootViewController:self.tabBarController];
     
     [self.window makeKeyAndVisible];

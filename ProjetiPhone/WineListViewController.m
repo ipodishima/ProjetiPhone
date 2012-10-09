@@ -1,19 +1,19 @@
 //
-//  CoursListViewController.m
+//  WineListViewController.m
 //  ProjetiPhone
 //
 //  Created by Johan Delouche on 03/10/12.
 //  Copyright (c) 2012 Johan Delouche. All rights reserved.
 //
 
-#import "CoursListViewController.h"
-#import "DetailCoursViewController.h"
+#import "WineListViewController.h"
+#import "DetailWineViewController.h"
 
-@interface CoursListViewController ()
+@interface WineListViewController ()
 
 @end
 
-@implementation CoursListViewController
+@implementation WineListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,8 +33,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    _listOfWine = [[NSArray alloc] initWithObjects:@"vin 1", @"vin 2",@"vin 3", @"vin 4",@"vin 5",@"vin 6",@"vin 7",@"vin 8",@"vin 9", nil];
+
     
-    _listOfCours = [[NSArray alloc] initWithObjects:@"cours 1", @"cours 2",@"cours 3", @"cours 4",@"cours 5",@"cours 6",@"cours 7",@"cours 8",@"cours 9", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,20 +57,21 @@
 {
 
     // Return the number of rows in the section.
-    return [_listOfCours count];
+    return [_listOfWine count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+   
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [_listOfCours objectAtIndex:[indexPath row]];
+    cell.textLabel.text = [_listOfWine objectAtIndex:[indexPath row]];
     
-    // Configure the cell...
     
     return cell;
 }
@@ -124,9 +126,9 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-DetailCoursViewController *detailCoursVC = [[DetailCoursViewController alloc] init];
-detailCoursVC.textToShow = [_listOfCours objectAtIndex:[indexPath row]];
-[self.navigationController pushViewController:detailCoursVC animated:YES];
+    DetailWineViewController *detailWineVC = [[DetailWineViewController alloc] init];
+    detailWineVC.textToShow = [_listOfWine objectAtIndex:[indexPath row]];
+    [self.navigationController pushViewController:detailWineVC animated:YES];
 }
 
 @end

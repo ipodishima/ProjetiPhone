@@ -1,5 +1,5 @@
 //
-//  CoursListViewController.h
+//  WineListViewController.h
 //  ProjetiPhone
 //
 //  Created by Johan Delouche on 03/10/12.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CoursListViewController : UITableViewController {
-    NSArray *_listOfCours;
+@interface WineListViewController : UITableViewController {
+       NSArray *_listOfWine;
 }
 
 @end

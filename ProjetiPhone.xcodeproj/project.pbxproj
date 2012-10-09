@@ -25,6 +25,10 @@
 		0477AF74161C67F5007442FB /* MyProfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF73161C67F5007442FB /* MyProfilViewController.m */; };
 		0477AF76161C6900007442FB /* 140-gradhat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0477AF75161C6900007442FB /* 140-gradhat.png */; };
 		0477AF78161C6939007442FB /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 0477AF77161C6939007442FB /* 111-user.png */; };
+		0477AF7B161C740A007442FB /* DetailCoursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF7A161C740A007442FB /* DetailCoursViewController.m */; };
+		0477AF7F161C7B2C007442FB /* WineListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF7E161C7B2C007442FB /* WineListViewController.m */; };
+		0477AF81161C7D3C007442FB /* 142-wine-bottle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0477AF80161C7D3C007442FB /* 142-wine-bottle.png */; };
+		0477AF87161C7EEC007442FB /* DetailWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF86161C7EEC007442FB /* DetailWineViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,13 @@
 		0477AF73161C67F5007442FB /* MyProfilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfilViewController.m; sourceTree = "<group>"; };
 		0477AF75161C6900007442FB /* 140-gradhat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "140-gradhat.png"; sourceTree = "<group>"; };
 		0477AF77161C6939007442FB /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
+		0477AF79161C740A007442FB /* DetailCoursViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCoursViewController.h; sourceTree = "<group>"; };
+		0477AF7A161C740A007442FB /* DetailCoursViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCoursViewController.m; sourceTree = "<group>"; };
+		0477AF7D161C7B2C007442FB /* WineListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineListViewController.h; sourceTree = "<group>"; };
+		0477AF7E161C7B2C007442FB /* WineListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineListViewController.m; sourceTree = "<group>"; };
+		0477AF80161C7D3C007442FB /* 142-wine-bottle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "142-wine-bottle.png"; sourceTree = "<group>"; };
+		0477AF85161C7EEC007442FB /* DetailWineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailWineViewController.h; sourceTree = "<group>"; };
+		0477AF86161C7EEC007442FB /* DetailWineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailWineViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +133,7 @@
 		046B20171619CBB3003DF181 /* ProjetiPhone */ = {
 			isa = PBXGroup;
 			children = (
+				0477AF7C161C7AE0007442FB /* Wine */,
 				0477AF71161C679A007442FB /* Profil */,
 				0477AF6D161C64C4007442FB /* Cours */,
 				046B20201619CBB3003DF181 /* AppDelegate.h */,
@@ -170,6 +182,8 @@
 				0477AF6E161C65E7007442FB /* CoursListViewController.h */,
 				0477AF75161C6900007442FB /* 140-gradhat.png */,
 				0477AF6F161C65E7007442FB /* CoursListViewController.m */,
+				0477AF79161C740A007442FB /* DetailCoursViewController.h */,
+				0477AF7A161C740A007442FB /* DetailCoursViewController.m */,
 			);
 			name = Cours;
 			sourceTree = "<group>";
@@ -182,6 +196,18 @@
 				0477AF77161C6939007442FB /* 111-user.png */,
 			);
 			name = Profil;
+			sourceTree = "<group>";
+		};
+		0477AF7C161C7AE0007442FB /* Wine */ = {
+			isa = PBXGroup;
+			children = (
+				0477AF80161C7D3C007442FB /* 142-wine-bottle.png */,
+				0477AF7D161C7B2C007442FB /* WineListViewController.h */,
+				0477AF7E161C7B2C007442FB /* WineListViewController.m */,
+				0477AF85161C7EEC007442FB /* DetailWineViewController.h */,
+				0477AF86161C7EEC007442FB /* DetailWineViewController.m */,
+			);
+			name = Wine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +287,7 @@
 				046B20281619CBB3003DF181 /* Default-568h@2x.png in Resources */,
 				0477AF76161C6900007442FB /* 140-gradhat.png in Resources */,
 				0477AF78161C6939007442FB /* 111-user.png in Resources */,
+				0477AF81161C7D3C007442FB /* 142-wine-bottle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +326,9 @@
 				046B20221619CBB3003DF181 /* AppDelegate.m in Sources */,
 				0477AF70161C65E7007442FB /* CoursListViewController.m in Sources */,
 				0477AF74161C67F5007442FB /* MyProfilViewController.m in Sources */,
+				0477AF7B161C740A007442FB /* DetailCoursViewController.m in Sources */,
+				0477AF7F161C7B2C007442FB /* WineListViewController.m in Sources */,
+				0477AF87161C7EEC007442FB /* DetailWineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
