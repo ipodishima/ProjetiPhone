@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LBYouTubePlayerViewController.h"
 
-@interface DetailVideoViewController : UIViewController {
+@interface DetailVideoViewController : UIViewController <LBYouTubePlayerControllerDelegate> {
     UILabel *_label;
 }
 
+@property (nonatomic, strong) LBYouTubePlayerViewController *controller;
 @property NSString *textToShow;
 
 @end

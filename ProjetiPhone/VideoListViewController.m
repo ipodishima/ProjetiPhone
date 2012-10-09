@@ -68,6 +68,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        cell.imageView.image = [UIImage imageNamed:@"45-movie-1.png"];
     }
     
     cell.textLabel.text = [_listOfVideo objectAtIndex:[indexPath row]];
