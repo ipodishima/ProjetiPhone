@@ -38,8 +38,12 @@
 		04A47DCB16244F0F00791595 /* 90-life-buoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A47DCA16244F0F00791595 /* 90-life-buoy.png */; };
 		04A47DD01624540000791595 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A47DCF1624540000791595 /* Default.png */; };
 		04A47DDA16245D5300791595 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 04A47DD616245D5300791595 /* CHANGELOG.md */; };
-		04A47DDB16245D5300791595 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A47DD816245D5300791595 /* JSONKit.m */; };
+		04A47DDB16245D5300791595 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A47DD816245D5300791595 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		04A47DDC16245D5300791595 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 04A47DD916245D5300791595 /* README.md */; };
+		04A47E1616245EF100791595 /* LBYouTubeExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A47E1116245EF100791595 /* LBYouTubeExtractor.m */; };
+		04A47E1716245EF100791595 /* LBYouTubePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A47E1316245EF100791595 /* LBYouTubePlayerController.m */; };
+		04A47E1816245EF100791595 /* LBYouTubePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A47E1516245EF100791595 /* LBYouTubePlayerViewController.m */; };
+		04A47E1A16245F7800791595 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A47E1916245F7800791595 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,14 @@
 		04A47DD716245D5300791595 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		04A47DD816245D5300791595 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		04A47DD916245D5300791595 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		04A47E0F16245EF100791595 /* LBYouTube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTube.h; sourceTree = "<group>"; };
+		04A47E1016245EF100791595 /* LBYouTubeExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubeExtractor.h; sourceTree = "<group>"; };
+		04A47E1116245EF100791595 /* LBYouTubeExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubeExtractor.m; sourceTree = "<group>"; };
+		04A47E1216245EF100791595 /* LBYouTubePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubePlayerController.h; sourceTree = "<group>"; };
+		04A47E1316245EF100791595 /* LBYouTubePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubePlayerController.m; sourceTree = "<group>"; };
+		04A47E1416245EF100791595 /* LBYouTubePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBYouTubePlayerViewController.h; sourceTree = "<group>"; };
+		04A47E1516245EF100791595 /* LBYouTubePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBYouTubePlayerViewController.m; sourceTree = "<group>"; };
+		04A47E1916245F7800791595 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A47E1A16245F7800791595 /* MediaPlayer.framework in Frameworks */,
 				046B20121619CBB3003DF181 /* UIKit.framework in Frameworks */,
 				046B20141619CBB3003DF181 /* Foundation.framework in Frameworks */,
 				046B20161619CBB3003DF181 /* CoreGraphics.framework in Frameworks */,
@@ -150,6 +163,7 @@
 		046B20101619CBB3003DF181 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04A47E1916245F7800791595 /* MediaPlayer.framework */,
 				046B20111619CBB3003DF181 /* UIKit.framework */,
 				046B20131619CBB3003DF181 /* Foundation.framework */,
 				046B20151619CBB3003DF181 /* CoreGraphics.framework */,
@@ -161,6 +175,7 @@
 		046B20171619CBB3003DF181 /* ProjetiPhone */ = {
 			isa = PBXGroup;
 			children = (
+				04A47E0E16245EF100791595 /* LBYouTubeView */,
 				04A47DD516245D5300791595 /* JSONKit */,
 				04A47DCC162450D900791595 /* Ressources */,
 				04A47DBE16244C3400791595 /* Commande */,
@@ -295,6 +310,21 @@
 			path = JSONKit;
 			sourceTree = SOURCE_ROOT;
 		};
+		04A47E0E16245EF100791595 /* LBYouTubeView */ = {
+			isa = PBXGroup;
+			children = (
+				04A47E0F16245EF100791595 /* LBYouTube.h */,
+				04A47E1016245EF100791595 /* LBYouTubeExtractor.h */,
+				04A47E1116245EF100791595 /* LBYouTubeExtractor.m */,
+				04A47E1216245EF100791595 /* LBYouTubePlayerController.h */,
+				04A47E1316245EF100791595 /* LBYouTubePlayerController.m */,
+				04A47E1416245EF100791595 /* LBYouTubePlayerViewController.h */,
+				04A47E1516245EF100791595 /* LBYouTubePlayerViewController.m */,
+			);
+			name = LBYouTubeView;
+			path = LBYouTubeView/LBYouTubeView;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,6 +455,9 @@
 				04A47DC416244C7300791595 /* CommandeListViewController.m in Sources */,
 				04A47DC716244C9200791595 /* DetailCommandeViewController.m in Sources */,
 				04A47DDB16245D5300791595 /* JSONKit.m in Sources */,
+				04A47E1616245EF100791595 /* LBYouTubeExtractor.m in Sources */,
+				04A47E1716245EF100791595 /* LBYouTubePlayerController.m in Sources */,
+				04A47E1816245EF100791595 /* LBYouTubePlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

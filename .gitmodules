@@ -1,3 +1,6 @@
 [submodule "JSONKit"]
 	path = JSONKit
 	url = https://github.com/johnezang/JSONKit.git
+[submodule "LBYouTubeView"]
+	path = LBYouTubeView
+	url = https://github.com/larcus94/LBYouTubeView.git
