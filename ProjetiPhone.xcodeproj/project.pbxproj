@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046A4C401639278200D51C39 /* cours.json in Resources */ = {isa = PBXBuildFile; fileRef = 046A4C3F1639278200D51C39 /* cours.json */; };
+		046A4C44163927D900D51C39 /* Cours.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C43163927D900D51C39 /* Cours.m */; };
+		046A4C47163928A500D51C39 /* Wine.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C46163928A500D51C39 /* Wine.m */; };
+		046A4C4A1639306600D51C39 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C491639306600D51C39 /* Location.m */; };
+		046A4C511639343100D51C39 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C4D1639343100D51C39 /* DownloadManager.m */; };
+		046A4C521639343100D51C39 /* DownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C4F1639343100D51C39 /* DownloadOperation.m */; };
 		046B20121619CBB3003DF181 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046B20111619CBB3003DF181 /* UIKit.framework */; };
 		046B20141619CBB3003DF181 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046B20131619CBB3003DF181 /* Foundation.framework */; };
 		046B20161619CBB3003DF181 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046B20151619CBB3003DF181 /* CoreGraphics.framework */; };
@@ -59,6 +65,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		046A4C3F1639278200D51C39 /* cours.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cours.json; sourceTree = "<group>"; };
+		046A4C42163927D900D51C39 /* Cours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cours.h; sourceTree = "<group>"; };
+		046A4C43163927D900D51C39 /* Cours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cours.m; sourceTree = "<group>"; };
+		046A4C45163928A500D51C39 /* Wine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wine.h; sourceTree = "<group>"; };
+		046A4C46163928A500D51C39 /* Wine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wine.m; sourceTree = "<group>"; };
+		046A4C481639306600D51C39 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		046A4C491639306600D51C39 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		046A4C4C1639343100D51C39 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
+		046A4C4D1639343100D51C39 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
+		046A4C4E1639343100D51C39 /* DownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadOperation.h; sourceTree = "<group>"; };
+		046A4C4F1639343100D51C39 /* DownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadOperation.m; sourceTree = "<group>"; };
+		046A4C501639343100D51C39 /* DownloadDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadDelegate.h; sourceTree = "<group>"; };
 		046B200D1619CBB3003DF181 /* ProjetiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046B20111619CBB3003DF181 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		046B20131619CBB3003DF181 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,6 +163,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		046A4C4B1639341900D51C39 /* Download is not that easy ! */ = {
+			isa = PBXGroup;
+			children = (
+				046A4C4C1639343100D51C39 /* DownloadManager.h */,
+				046A4C4D1639343100D51C39 /* DownloadManager.m */,
+				046A4C4E1639343100D51C39 /* DownloadOperation.h */,
+				046A4C4F1639343100D51C39 /* DownloadOperation.m */,
+				046A4C501639343100D51C39 /* DownloadDelegate.h */,
+			);
+			name = "Download is not that easy !";
+			sourceTree = "<group>";
+		};
 		046B20021619CBB3003DF181 = {
 			isa = PBXGroup;
 			children = (
@@ -179,8 +209,8 @@
 		046B20171619CBB3003DF181 /* ProjetiPhone */ = {
 			isa = PBXGroup;
 			children = (
+				046A4C4B1639341900D51C39 /* Download is not that easy ! */,
 				04A47E1B162461CD00791595 /* SubModule */,
-				04A47DCC162450D900791595 /* Ressources */,
 				04A47DBE16244C3400791595 /* Commande */,
 				04A47DBD16244C2A00791595 /* About */,
 				04A47DAF1624421600791595 /* Video */,
@@ -231,10 +261,17 @@
 			isa = PBXGroup;
 			children = (
 				0477AF6E161C65E7007442FB /* CoursListViewController.h */,
+				046A4C45163928A500D51C39 /* Wine.h */,
+				046A4C481639306600D51C39 /* Location.h */,
+				046A4C491639306600D51C39 /* Location.m */,
+				046A4C46163928A500D51C39 /* Wine.m */,
+				046A4C42163927D900D51C39 /* Cours.h */,
+				046A4C43163927D900D51C39 /* Cours.m */,
 				0477AF75161C6900007442FB /* 140-gradhat.png */,
 				0477AF6F161C65E7007442FB /* CoursListViewController.m */,
 				0477AF79161C740A007442FB /* DetailCoursViewController.h */,
 				0477AF7A161C740A007442FB /* DetailCoursViewController.m */,
+				046A4C3F1639278200D51C39 /* cours.json */,
 			);
 			name = Cours;
 			sourceTree = "<group>";
@@ -295,13 +332,6 @@
 				04A47DC316244C7300791595 /* CommandeListViewController.m */,
 			);
 			name = Commande;
-			sourceTree = "<group>";
-		};
-		04A47DCC162450D900791595 /* Ressources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Ressources;
 			sourceTree = "<group>";
 		};
 		04A47DD516245D5300791595 /* JSONKit */ = {
@@ -424,6 +454,7 @@
 				04A47DDC16245D5300791595 /* README.md in Resources */,
 				04A47E1D162465AE00791595 /* 87-wine-glass.png in Resources */,
 				04A47E1F1624661700791595 /* 45-movie-1.png in Resources */,
+				046A4C401639278200D51C39 /* cours.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +505,9 @@
 				04A47E1616245EF100791595 /* LBYouTubeExtractor.m in Sources */,
 				04A47E1716245EF100791595 /* LBYouTubePlayerController.m in Sources */,
 				04A47E1816245EF100791595 /* LBYouTubePlayerViewController.m in Sources */,
+				046A4C44163927D900D51C39 /* Cours.m in Sources */,
+				046A4C47163928A500D51C39 /* Wine.m in Sources */,
+				046A4C4A1639306600D51C39 /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +516,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				046B203D1619CBB4003DF181 /* ProjetiPhoneTests.m in Sources */,
+				046A4C511639343100D51C39 /* DownloadManager.m in Sources */,
+				046A4C521639343100D51C39 /* DownloadOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

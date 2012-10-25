@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface DetailCoursViewController : UIViewController {
     UILabel *_label;
+
+    
 }
 
 @property NSString *textToShow;

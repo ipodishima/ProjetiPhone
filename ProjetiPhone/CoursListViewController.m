@@ -9,6 +9,7 @@
 #import "CoursListViewController.h"
 #import "DetailCoursViewController.h"
 
+
 @interface CoursListViewController ()
 
 @end
@@ -27,6 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // 1)
+    // Alloc the view which shows activity
+    _activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    // Set it to the right on navigation bar
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_activity];
+    
+    
+    [[DownloadManager shared] loadLocalFileName:@"cours" withDelegate:self];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -34,7 +44,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _listOfCours = [[NSArray alloc] initWithObjects:@"cours 1", @"cours 2",@"cours 3", @"cours 4",@"cours 5",@"cours 6",@"cours 7",@"cours 8",@"cours 9", nil];
+    _listOfCours = [[NSMutableArray alloc] initWithObjects:@"cours 1", @"cours 2",@"cours 3", @"cours 4",@"cours 5",@"cours 6",@"cours 7",@"cours 8",@"cours 9", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -129,5 +139,84 @@ DetailCoursViewController *detailCoursVC = [[DetailCoursViewController alloc] in
 detailCoursVC.textToShow = [_listOfCours objectAtIndex:[indexPath row]];
 [self.navigationController pushViewController:detailCoursVC animated:YES];
 }
+
+
+#pragma mark - DownloadDelegate protocol
+
+- (void) downloadOperation:(DownloadOperation *)operation didFailWithError:(NSError *)error
+{
+    // Stop activity indicator
+    [_activity stopAnimating];
+    NSLog(@"%@", error);
+    // Todo : handle the error
+}
+
+- (void) downloadOperation:(DownloadOperation *)operation didStartLoadingRequest:(NSMutableURLRequest *)request
+{
+    // Start the activity indicator
+    [_activity startAnimating];
+}
+
+- (void) downloadOperation:(DownloadOperation *)operation didLoadObject:(id)object
+{
+    // Stop activity indicator
+    [_activity stopAnimating];
+    
+    // Now, we need to go through all the objects loaded in the JSON, parse it, and create new Objective-C objects
+    // First, remove previous objects in instance array
+    [_listOfCours removeAllObjects];
+    
+    // Allocate it if not already. This is called lazy loading. Remember, we are on mobile devices, where RAM use is really important
+    if (!_listOfCours)
+        _listOfCours = [NSMutableArray new];
+    
+    // Now enumerate the json array
+    for (NSDictionary *dic in object)
+    {
+        // Create a new contact
+        Cours *c = [Cours new];
+        
+        // Set its properties from JSON 'object'
+        c.title = [dic objectForKey:@"title"];
+        c.date = [dic objectForKey:@"date"];
+        c.agenda = [dic objectForKey:@"agenda"];
+        
+        Location *l = [Location new];
+        NSDictionary *dicLoc = [dic objectForKey:@"location"];
+        l.latitude = [dicLoc[@"gps"] objectForKey:@"latitude"];
+        l.longitude = [dicLoc[@"gps"] objectForKey:@"longitude"];
+        l.street = [dicLoc[@"address"] objectForKey:@"street"];
+        l.city = [dicLoc[@"address"] objectForKey:@"city"];
+        l.city = [dicLoc[@"address"] objectForKey:@"city"];
+        //to be continued here !
+        // use http://www.jsoneditoronline.org/
+        
+        c.location = l;
+        
+        Wine *w = [Wine new];
+        NSDictionary *dicWine = [dic objectForKey:@"wines"];
+        
+        
+       
+        
+        
+        // Add it to the array
+        [_listOfCours addObject:c];
+    }
+    
+    // Just for fun, sort the array
+    [_listOfCours sortUsingDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES]]];
+    
+    // Try these
+    // [_arrayOfContacts sortUsingDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES]]];
+    // [_arrayOfContacts sortUsingDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"age" ascending:YES]]];
+    // Pretty cool no?
+    
+    // We are almost done. Please note that the parsing is made here just to avoid complexification. You should always create a model like YouTubeManager class which handles the parsing and give the data to the controller. Remember the MVC pattern
+    
+    // When we finished, reload the table view
+    [self.tableView reloadData];
+}
+
 
 @end

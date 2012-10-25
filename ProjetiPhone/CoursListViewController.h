@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DownloadManager.h"
+#import "Cours.h"
 
-@interface CoursListViewController : UITableViewController {
-    NSArray *_listOfCours;
+@interface CoursListViewController : UITableViewController <DownloadDelegate> {
+    UIActivityIndicatorView *_activity;
+    NSMutableArray *_listOfCours;
 }
 
 @end
