@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ProjetiPhone/CoursListViewController.m"
-         timestampString = "372849779.01542"
+         timestampString = "373647830.606465"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "176"
-         endingLineNumber = "176"
+         startingLineNumber = "198"
+         endingLineNumber = "198"
          landmarkName = "-downloadOperation:didLoadObject:"
          landmarkType = "5">
       </FileBreakpoint>

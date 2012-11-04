@@ -260,17 +260,17 @@
 		0477AF6D161C64C4007442FB /* Cours */ = {
 			isa = PBXGroup;
 			children = (
-				0477AF6E161C65E7007442FB /* CoursListViewController.h */,
-				046A4C45163928A500D51C39 /* Wine.h */,
-				046A4C481639306600D51C39 /* Location.h */,
 				046A4C491639306600D51C39 /* Location.m */,
+				046A4C481639306600D51C39 /* Location.h */,
 				046A4C46163928A500D51C39 /* Wine.m */,
-				046A4C42163927D900D51C39 /* Cours.h */,
+				046A4C45163928A500D51C39 /* Wine.h */,
 				046A4C43163927D900D51C39 /* Cours.m */,
-				0477AF75161C6900007442FB /* 140-gradhat.png */,
+				046A4C42163927D900D51C39 /* Cours.h */,
 				0477AF6F161C65E7007442FB /* CoursListViewController.m */,
+				0477AF6E161C65E7007442FB /* CoursListViewController.h */,
 				0477AF79161C740A007442FB /* DetailCoursViewController.h */,
 				0477AF7A161C740A007442FB /* DetailCoursViewController.m */,
+				0477AF75161C6900007442FB /* 140-gradhat.png */,
 				046A4C3F1639278200D51C39 /* cours.json */,
 			);
 			name = Cours;
@@ -315,8 +315,8 @@
 		04A47DBD16244C2A00791595 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				04A47DBF16244C5900791595 /* AboutViewController.h */,
 				04A47DC016244C5900791595 /* AboutViewController.m */,
+				04A47DBF16244C5900791595 /* AboutViewController.h */,
 				04A47DCA16244F0F00791595 /* 90-life-buoy.png */,
 			);
 			name = About;

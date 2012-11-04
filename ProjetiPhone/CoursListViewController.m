@@ -188,18 +188,24 @@ detailCoursVC.textToShow = [_listOfCours objectAtIndex:[indexPath row]];
         l.street = [dicLoc[@"address"] objectForKey:@"street"];
         l.city = [dicLoc[@"address"] objectForKey:@"city"];
         l.city = [dicLoc[@"address"] objectForKey:@"city"];
-        //to be continued here !
         // use http://www.jsoneditoronline.org/
         
         c.location = l;
         
-        Wine *w = [Wine new];
-        NSDictionary *dicWine = [dic objectForKey:@"wines"];
-        
-        
-       
-        
-        
+        NSMutableArray *wines = [[NSMutableArray new] init];
+        NSArray *arrayOfWines = [dic objectForKey:@"wines"]; // C'est bien un tableau, commence par des [ dans ton JSON qui contient des dictionnaires
+        for (NSDictionary * dicWine in arrayOfWines) {
+            
+            //create a new wine
+            Wine *w = [Wine new];
+            
+            w.name = [dicWine objectForKey:@"name"];
+            w.year = (NSInteger)[dicWine objectForKey:@"year"];
+            w.price = (NSInteger)[dicWine objectForKey:@"price"];
+            w.source = [dicWine objectForKey:@"source"];
+            
+            [wines addObject:w];
+        }
         // Add it to the array
         [_listOfCours addObject:c];
     }
