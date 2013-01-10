@@ -19,6 +19,7 @@
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
+    NSLog(@"on entre dans le constructeur");
     if (self) {
         // Custom initialization
     }
@@ -29,13 +30,14 @@
 {
     [super viewDidLoad];
     
-    // 1)
+    
+    
     // Alloc the view which shows activity
     _activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     // Set it to the right on navigation bar
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_activity];
     
-    
+    // Load the JSON from the file
     [[DownloadManager shared] loadLocalFileName:@"cours" withDelegate:self];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -44,7 +46,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _listOfCours = [[NSMutableArray alloc] initWithObjects:@"cours 1", @"cours 2",@"cours 3", @"cours 4",@"cours 5",@"cours 6",@"cours 7",@"cours 8",@"cours 9", nil];
+    //_listOfCours = [[NSMutableArray alloc] initWithObjects:@"cours 1", @"cours 2",@"cours 3", @"cours 4",@"cours 5",@"cours 6",@"cours 7",@"cours 8",@"cours 9", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,20 +68,24 @@
 {
 
     // Return the number of rows in the section.
-    return [_listOfCours count];
+    //return [_listOfCours count];
+    return _listOfCours.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    
-    cell.textLabel.text = [_listOfCours objectAtIndex:[indexPath row]];
-    
+    Cours *cours = [_listOfCours objectAtIndex:[indexPath row]];
+
+
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ ", cours.title];
+
     // Configure the cell...
     
     return cell;
@@ -140,7 +146,7 @@ detailCoursVC.textToShow = [_listOfCours objectAtIndex:[indexPath row]];
 [self.navigationController pushViewController:detailCoursVC animated:YES];
 }
 
-
+//imlement protocol
 #pragma mark - DownloadDelegate protocol
 
 - (void) downloadOperation:(DownloadOperation *)operation didFailWithError:(NSError *)error
@@ -177,7 +183,7 @@ detailCoursVC.textToShow = [_listOfCours objectAtIndex:[indexPath row]];
         Cours *c = [Cours new];
         
         // Set its properties from JSON 'object'
-        c.title = [dic objectForKey:@"title"];
+       c.title = [dic objectForKey:@"title"];
         c.date = [dic objectForKey:@"date"];
         c.agenda = [dic objectForKey:@"agenda"];
         
@@ -197,7 +203,7 @@ detailCoursVC.textToShow = [_listOfCours objectAtIndex:[indexPath row]];
         for (NSDictionary * dicWine in arrayOfWines) {
             
             //create a new wine
-            Wine *w = [Wine new];
+            Wine *w = [[Wine new] init];
             
             w.name = [dicWine objectForKey:@"name"];
             w.year = (NSInteger)[dicWine objectForKey:@"year"];
@@ -211,7 +217,7 @@ detailCoursVC.textToShow = [_listOfCours objectAtIndex:[indexPath row]];
     }
     
     // Just for fun, sort the array
-    [_listOfCours sortUsingDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES]]];
+   // [_listOfCours sortUsingDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES]]];
     
     // Try these
     // [_arrayOfContacts sortUsingDescriptors:[NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"lastName" ascending:YES]]];

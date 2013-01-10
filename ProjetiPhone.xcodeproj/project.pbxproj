@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041AFD881647E19200905A6F /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C4D1639343100D51C39 /* DownloadManager.m */; };
+		041AFD8A1647E1E500905A6F /* DownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C4F1639343100D51C39 /* DownloadOperation.m */; };
 		046A4C401639278200D51C39 /* cours.json in Resources */ = {isa = PBXBuildFile; fileRef = 046A4C3F1639278200D51C39 /* cours.json */; };
 		046A4C44163927D900D51C39 /* Cours.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C43163927D900D51C39 /* Cours.m */; };
 		046A4C47163928A500D51C39 /* Wine.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C46163928A500D51C39 /* Wine.m */; };
@@ -494,6 +496,8 @@
 				0477AF70161C65E7007442FB /* CoursListViewController.m in Sources */,
 				0477AF74161C67F5007442FB /* MyProfilViewController.m in Sources */,
 				0477AF7B161C740A007442FB /* DetailCoursViewController.m in Sources */,
+				041AFD881647E19200905A6F /* DownloadManager.m in Sources */,
+				041AFD8A1647E1E500905A6F /* DownloadOperation.m in Sources */,
 				0477AF7F161C7B2C007442FB /* WineListViewController.m in Sources */,
 				0477AF87161C7EEC007442FB /* DetailWineViewController.m in Sources */,
 				04A47DB5162442CD00791595 /* VideoListViewController.m in Sources */,
