@@ -36,6 +36,7 @@
 		0477AF7F161C7B2C007442FB /* WineListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF7E161C7B2C007442FB /* WineListViewController.m */; };
 		0477AF81161C7D3C007442FB /* 142-wine-bottle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0477AF80161C7D3C007442FB /* 142-wine-bottle.png */; };
 		0477AF87161C7EEC007442FB /* DetailWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF86161C7EEC007442FB /* DetailWineViewController.m */; };
+		04A472DF169F448F00BEF38B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A472DE169F448F00BEF38B /* MapKit.framework */; };
 		04A47DB21624429600791595 /* 70-tv.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A47DB11624429600791595 /* 70-tv.png */; };
 		04A47DB5162442CD00791595 /* VideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A47DB4162442CD00791595 /* VideoListViewController.m */; };
 		04A47DB81624444700791595 /* DetailVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A47DB71624444700791595 /* DetailVideoViewController.m */; };
@@ -110,6 +111,7 @@
 		0477AF80161C7D3C007442FB /* 142-wine-bottle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "142-wine-bottle.png"; sourceTree = "<group>"; };
 		0477AF85161C7EEC007442FB /* DetailWineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailWineViewController.h; sourceTree = "<group>"; };
 		0477AF86161C7EEC007442FB /* DetailWineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailWineViewController.m; sourceTree = "<group>"; };
+		04A472DE169F448F00BEF38B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		04A47DB11624429600791595 /* 70-tv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "70-tv.png"; sourceTree = "<group>"; };
 		04A47DB3162442CD00791595 /* VideoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListViewController.h; sourceTree = "<group>"; };
 		04A47DB4162442CD00791595 /* VideoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListViewController.m; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A472DF169F448F00BEF38B /* MapKit.framework in Frameworks */,
 				04A47E1A16245F7800791595 /* MediaPlayer.framework in Frameworks */,
 				046B20121619CBB3003DF181 /* UIKit.framework in Frameworks */,
 				046B20141619CBB3003DF181 /* Foundation.framework in Frameworks */,
@@ -199,6 +202,7 @@
 		046B20101619CBB3003DF181 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04A472DE169F448F00BEF38B /* MapKit.framework */,
 				04A47E1916245F7800791595 /* MediaPlayer.framework */,
 				046B20111619CBB3003DF181 /* UIKit.framework */,
 				046B20131619CBB3003DF181 /* Foundation.framework */,
@@ -270,8 +274,8 @@
 				046A4C42163927D900D51C39 /* Cours.h */,
 				0477AF6F161C65E7007442FB /* CoursListViewController.m */,
 				0477AF6E161C65E7007442FB /* CoursListViewController.h */,
-				0477AF79161C740A007442FB /* DetailCoursViewController.h */,
 				0477AF7A161C740A007442FB /* DetailCoursViewController.m */,
+				0477AF79161C740A007442FB /* DetailCoursViewController.h */,
 				0477AF75161C6900007442FB /* 140-gradhat.png */,
 				046A4C3F1639278200D51C39 /* cours.json */,
 			);

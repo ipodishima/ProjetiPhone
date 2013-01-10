@@ -7,14 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 
 @interface DetailCoursViewController : UIViewController {
-    UILabel *_label;
+
+    UILabel *_labelBackground;
+    UILabel *_labelTitle;
+    UILabel *_labelColumn1;
+    UILabel *_labelColumn2;
+    MKMapView *_mapView;
+    
 
     
 }
 
 @property NSString *textToShow;
+@property NSString *latitude;
+@property NSString *longitude;
+
+
 
 @end

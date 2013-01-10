@@ -8,6 +8,7 @@
 
 #import "CoursListViewController.h"
 #import "DetailCoursViewController.h"
+#import "DetailsTestViewController.h"
 
 
 @interface CoursListViewController ()
@@ -19,7 +20,6 @@
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    NSLog(@"on entre dans le constructeur");
     if (self) {
         // Custom initialization
     }
@@ -68,8 +68,8 @@
 {
 
     // Return the number of rows in the section.
-    //return [_listOfCours count];
-    return _listOfCours.count;
+    return [_listOfCours count];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -85,6 +85,8 @@
 
 
     cell.textLabel.text = [NSString stringWithFormat:@"%@ ", cours.title];
+    cell.detailTextLabel.text =  [NSString stringWithFormat:@"%@ ", cours.title];
+    
 
     // Configure the cell...
     
@@ -141,9 +143,20 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-DetailCoursViewController *detailCoursVC = [[DetailCoursViewController alloc] init];
-detailCoursVC.textToShow = [_listOfCours objectAtIndex:[indexPath row]];
-[self.navigationController pushViewController:detailCoursVC animated:YES];
+    
+    DetailCoursViewController *detailCoursVC = [[DetailCoursViewController alloc] init];
+    Cours *cours = [_listOfCours objectAtIndex:[indexPath row]];
+
+    detailCoursVC.textToShow = cours.title;
+    detailCoursVC.latitude = cours.location.latitude;
+    detailCoursVC.longitude = cours.location.longitude;
+    
+    [self.navigationController pushViewController:detailCoursVC animated:YES];
+     
+    /*
+    DetailsTestViewController *dtvc = [[DetailsTestViewController alloc] init];
+    [self.navigationController pushViewController:dtvc animated:YES];
+     */
 }
 
 //imlement protocol
@@ -183,7 +196,7 @@ detailCoursVC.textToShow = [_listOfCours objectAtIndex:[indexPath row]];
         Cours *c = [Cours new];
         
         // Set its properties from JSON 'object'
-       c.title = [dic objectForKey:@"title"];
+        c.title = [dic objectForKey:@"title"];
         c.date = [dic objectForKey:@"date"];
         c.agenda = [dic objectForKey:@"agenda"];
         
@@ -193,10 +206,11 @@ detailCoursVC.textToShow = [_listOfCours objectAtIndex:[indexPath row]];
         l.longitude = [dicLoc[@"gps"] objectForKey:@"longitude"];
         l.street = [dicLoc[@"address"] objectForKey:@"street"];
         l.city = [dicLoc[@"address"] objectForKey:@"city"];
-        l.city = [dicLoc[@"address"] objectForKey:@"city"];
+        l.country = [dicLoc[@"address"] objectForKey:@"country"];
         // use http://www.jsoneditoronline.org/
-        
+        NSLog(@"%@",l.latitude);
         c.location = l;
+        NSLog(@"%@",c.location.longitude);
         
         NSMutableArray *wines = [[NSMutableArray new] init];
         NSArray *arrayOfWines = [dic objectForKey:@"wines"]; // C'est bien un tableau, commence par des [ dans ton JSON qui contient des dictionnaires
@@ -212,6 +226,8 @@ detailCoursVC.textToShow = [_listOfCours objectAtIndex:[indexPath row]];
             
             [wines addObject:w];
         }
+        c.wines = wines;
+        
         // Add it to the array
         [_listOfCours addObject:c];
     }

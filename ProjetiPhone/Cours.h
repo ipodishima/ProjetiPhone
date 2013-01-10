@@ -15,8 +15,8 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *agenda;
 @property (nonatomic, strong) NSString *date;
-@property (nonatomic, assign) NSMutableArray *wines;
-@property (nonatomic, assign) Location *location;
+@property (nonatomic, strong) NSMutableArray *wines;
+@property (nonatomic, strong) Location *location;
 
 
 @end
