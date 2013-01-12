@@ -55,6 +55,7 @@
 		04A47E1A16245F7800791595 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A47E1916245F7800791595 /* MediaPlayer.framework */; };
 		04A47E1D162465AE00791595 /* 87-wine-glass.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A47E1C162465AD00791595 /* 87-wine-glass.png */; };
 		04A47E1F1624661700791595 /* 45-movie-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A47E1E1624661700791595 /* 45-movie-1.png */; };
+		04DD5DA916A1ED1F0059AE4F /* vins.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DD5DA816A1ED1F0059AE4F /* vins.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		04A47E1916245F7800791595 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		04A47E1C162465AD00791595 /* 87-wine-glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "87-wine-glass.png"; sourceTree = "<group>"; };
 		04A47E1E1624661700791595 /* 45-movie-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "45-movie-1.png"; sourceTree = "<group>"; };
+		04DD5DA816A1ED1F0059AE4F /* vins.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vins.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,12 +297,13 @@
 		0477AF7C161C7AE0007442FB /* Wine */ = {
 			isa = PBXGroup;
 			children = (
-				0477AF80161C7D3C007442FB /* 142-wine-bottle.png */,
-				0477AF7D161C7B2C007442FB /* WineListViewController.h */,
-				04A47E1C162465AD00791595 /* 87-wine-glass.png */,
 				0477AF7E161C7B2C007442FB /* WineListViewController.m */,
-				0477AF85161C7EEC007442FB /* DetailWineViewController.h */,
+				0477AF7D161C7B2C007442FB /* WineListViewController.h */,
 				0477AF86161C7EEC007442FB /* DetailWineViewController.m */,
+				0477AF85161C7EEC007442FB /* DetailWineViewController.h */,
+				0477AF80161C7D3C007442FB /* 142-wine-bottle.png */,
+				04A47E1C162465AD00791595 /* 87-wine-glass.png */,
+				04DD5DA816A1ED1F0059AE4F /* vins.json */,
 			);
 			name = Wine;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				04A47E1D162465AE00791595 /* 87-wine-glass.png in Resources */,
 				04A47E1F1624661700791595 /* 45-movie-1.png in Resources */,
 				046A4C401639278200D51C39 /* cours.json in Resources */,
+				04DD5DA916A1ED1F0059AE4F /* vins.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 #import "CoursListViewController.h"
 #import "DetailCoursViewController.h"
-#import "DetailsTestViewController.h"
+
 
 
 @interface CoursListViewController ()
@@ -39,7 +39,9 @@
     
     // Load the JSON from the file
     [[DownloadManager shared] loadLocalFileName:@"cours" withDelegate:self];
-
+    
+    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -85,10 +87,7 @@
 
 
     cell.textLabel.text = [NSString stringWithFormat:@"%@ ", cours.title];
-    cell.detailTextLabel.text =  [NSString stringWithFormat:@"%@ ", cours.title];
     
-
-    // Configure the cell...
     
     return cell;
 }
@@ -147,16 +146,21 @@
     DetailCoursViewController *detailCoursVC = [[DetailCoursViewController alloc] init];
     Cours *cours = [_listOfCours objectAtIndex:[indexPath row]];
 
-    detailCoursVC.textToShow = cours.title;
+    detailCoursVC.titleToShow = cours.title;
     detailCoursVC.latitude = cours.location.latitude;
     detailCoursVC.longitude = cours.location.longitude;
+    detailCoursVC.infos = [[[[[[cours.agenda stringByAppendingString: @"\n"] stringByAppendingString: cours.date] stringByAppendingString: @"\n"] stringByAppendingString: [cours.location.street stringByAppendingString:@" "]] stringByAppendingString: [cours.location.city stringByAppendingString:@" "]] stringByAppendingString: cours.location.country];
+    
+    NSString *res = [[NSMutableString alloc] init];
+    for (int i=0; i<cours.wines.count; i++) {
+        res = [res stringByAppendingString:[[cours.wines objectAtIndex:i] toString]];
+        res = [res stringByAppendingString:@"\n"];
+    }
+    detailCoursVC.wines = res;
     
     [self.navigationController pushViewController:detailCoursVC animated:YES];
      
-    /*
-    DetailsTestViewController *dtvc = [[DetailsTestViewController alloc] init];
-    [self.navigationController pushViewController:dtvc animated:YES];
-     */
+
 }
 
 //imlement protocol
@@ -220,10 +224,10 @@
             Wine *w = [[Wine new] init];
             
             w.name = [dicWine objectForKey:@"name"];
-            w.year = (NSInteger)[dicWine objectForKey:@"year"];
-            w.price = (NSInteger)[dicWine objectForKey:@"price"];
+            w.year = [dicWine objectForKey:@"year"];
+            w.price = [dicWine objectForKey:@"price"];
             w.source = [dicWine objectForKey:@"source"];
-            
+
             [wines addObject:w];
         }
         c.wines = wines;

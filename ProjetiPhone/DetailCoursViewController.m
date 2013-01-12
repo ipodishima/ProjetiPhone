@@ -37,12 +37,15 @@
     _labelColumn2 = [[UILabel alloc] initWithFrame:CGRectMake(170, 50, 130, 150)];
     _mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, 210, 280, 150)];
     
+    
     [_mapView setScrollEnabled:YES];
     [_mapView setShowsUserLocation:YES];
     
     [_mapView setZoomEnabled:YES];
     
-    
+    _labelColumn1.numberOfLines = 0;
+    _labelColumn2.numberOfLines = 0;
+
     
     // Définir le zoom
     MKCoordinateSpan span;
@@ -57,11 +60,12 @@
     region.center = coordinates;
     [_mapView setRegion:region animated:YES];
    
-    
+    /*
     _labelBackground.backgroundColor = [UIColor redColor];
     _labelTitle.backgroundColor = [UIColor yellowColor];
     _labelColumn1.backgroundColor = [UIColor greenColor];
     _labelColumn2.backgroundColor = [UIColor blueColor];
+     */
     
     [self.view addSubview:_labelBackground];
     [self.view addSubview:_labelTitle];
@@ -70,12 +74,12 @@
     [self.view addSubview:_mapView];
     
      
-    _labelTitle.text = _textToShow;
-   [_labelTitle setTextAlignment:NSTextAlignmentCenter];
+    _labelTitle.text = _titleToShow;
+    [_labelTitle setTextAlignment:NSTextAlignmentCenter];
     [_labelTitle setFont:[UIFont fontWithName:@"Helvetica-Bold" size:20]];
     
-    _labelColumn1.text = @"infos: agenda, date, address";
-    _labelColumn2.text = @"list of wins";
+    _labelColumn1.text = _infos;
+    _labelColumn2.text = _wines;
     
 }
 

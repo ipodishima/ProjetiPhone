@@ -22,9 +22,11 @@
     
 }
 
-@property NSString *textToShow;
+@property NSString *titleToShow;
 @property NSString *latitude;
 @property NSString *longitude;
+@property NSString *infos;
+@property NSString *wines;
 
 
 

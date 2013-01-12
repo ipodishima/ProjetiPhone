@@ -1,0 +1,20 @@
+ [
+  {
+  "name": "Gewürztraminer",
+  "year": "2011",
+  "origin": "Alsace",
+  "price": "4,20"
+  },
+  {
+  "name": "Pinot Gris",
+  "year": "2009",
+  "origin": "Alsace",
+  "price": "3,70"
+  },
+  {
+  "name": "Bordeaux",
+  "year": "2003",
+  "origin": "Chateau tralala",
+  "price": "5,60"
+  }
+]

@@ -10,4 +10,8 @@
 
 @implementation Wine
 
+-(NSString*) toString {
+    return [[_name stringByAppendingString:@" de "] stringByAppendingString:_year];
+}
+
 @end
