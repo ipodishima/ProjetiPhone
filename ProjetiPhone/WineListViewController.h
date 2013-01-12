@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DownloadManager.h"
+#import "Wine.h"
 
-@interface WineListViewController : UITableViewController {
-       NSArray *_listOfWine;
+@interface WineListViewController : UITableViewController <DownloadDelegate> {
+        UIActivityIndicatorView *_activity;
+       NSMutableArray *_listOfWine;
 }
 
 @end

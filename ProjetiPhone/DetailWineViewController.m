@@ -27,8 +27,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(20,20, 200, 30)];
+    _label = [[UILabel alloc] initWithFrame:CGRectMake(20,20, 280, 100)];
     [self.view addSubview:_label];
+    _label.numberOfLines = 0;
     _label.text = _textToShow;
 }
 

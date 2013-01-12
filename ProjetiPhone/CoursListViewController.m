@@ -48,7 +48,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    //_listOfCours = [[NSMutableArray alloc] initWithObjects:@"cours 1", @"cours 2",@"cours 3", @"cours 4",@"cours 5",@"cours 6",@"cours 7",@"cours 8",@"cours 9", nil];
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,9 +84,8 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     Cours *cours = [_listOfCours objectAtIndex:[indexPath row]];
-
-
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ ", cours.title];
+    cell.textLabel.text = cours.title;
+    cell.detailTextLabel.text = @"detail";
     
     
     return cell;
@@ -135,14 +134,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-    
+   
     DetailCoursViewController *detailCoursVC = [[DetailCoursViewController alloc] init];
     Cours *cours = [_listOfCours objectAtIndex:[indexPath row]];
 
@@ -226,7 +218,7 @@
             w.name = [dicWine objectForKey:@"name"];
             w.year = [dicWine objectForKey:@"year"];
             w.price = [dicWine objectForKey:@"price"];
-            w.source = [dicWine objectForKey:@"source"];
+            w.origin = [dicWine objectForKey:@"origin"];
 
             [wines addObject:w];
         }

@@ -11,9 +11,10 @@
 @interface Wine : NSObject
 
 -(NSString*) toString;
+-(NSString*) getInfos;
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *source;
+@property (nonatomic, strong) NSString *origin;
 @property (nonatomic, strong) NSString *year;
 @property (nonatomic, strong) NSString *price;
 

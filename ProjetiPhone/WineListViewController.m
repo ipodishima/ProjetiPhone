@@ -28,12 +28,14 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    _listOfWine = [[NSArray alloc] initWithObjects:@"vin 1", @"vin 2",@"vin 3", @"vin 4",@"vin 5",@"vin 6",@"vin 7",@"vin 8",@"vin 9", nil];
+    
+    _activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    // Set it to the right on navigation bar
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_activity];
+    
+    [[DownloadManager shared] loadLocalFileName:@"vins" withDelegate:self];
+    
+
 
     
 }
@@ -70,8 +72,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    
-    cell.textLabel.text = [_listOfWine objectAtIndex:[indexPath row]];
+    Wine *wine = [_listOfWine objectAtIndex:[indexPath row]];
+    cell.textLabel.text = wine.name;
     
     
     return cell;
@@ -120,16 +122,63 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
     DetailWineViewController *detailWineVC = [[DetailWineViewController alloc] init];
-    detailWineVC.textToShow = [_listOfWine objectAtIndex:[indexPath row]];
+    Wine *wine = [_listOfWine objectAtIndex:[indexPath row]];
+    
+    detailWineVC.textToShow = [wine getInfos];
+    
     [self.navigationController pushViewController:detailWineVC animated:YES];
 }
+
+#pragma mark - DownloadDelegate protocol
+
+- (void) downloadOperation:(DownloadOperation *)operation didFailWithError:(NSError *)error
+{
+    // Stop activity indicator
+    [_activity stopAnimating];
+    NSLog(@"%@", error);
+    // Todo : handle the error
+}
+
+- (void) downloadOperation:(DownloadOperation *)operation didStartLoadingRequest:(NSMutableURLRequest *)request
+{
+    // Start the activity indicator
+    [_activity startAnimating];
+}
+
+- (void) downloadOperation:(DownloadOperation *)operation didLoadObject:(id)object
+{
+    // Stop activity indicator
+    [_activity stopAnimating];
+    
+    // Now, we need to go through all the objects loaded in the JSON, parse it, and create new Objective-C objects
+    // First, remove previous objects in instance array
+    [_listOfWine removeAllObjects];
+    
+    // Allocate it if not already. This is called lazy loading. Remember, we are on mobile devices, where RAM use is really important
+    if (!_listOfWine)
+        _listOfWine = [NSMutableArray new];
+    
+    // Now enumerate the json array
+    for (NSDictionary *dic in object)
+    {
+        // Create a new contact
+        Wine *w = [Wine new];
+        
+        // Set its properties from JSON 'object'
+        w.name = [dic objectForKey:@"name"];
+        w.origin = [dic objectForKey:@"origin"];
+        w.year = [dic objectForKey:@"year"];
+        w.price = [dic objectForKey:@"price"];
+        
+        // Add it to the array
+        [_listOfWine addObject:w];
+    }
+
+    
+
+    [self.tableView reloadData];
+}
+
 
 @end

@@ -26,7 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+	_textView = [[UITextView alloc] initWithFrame:CGRectMake(10.0, 10.0, 300.0, 280.0)];
+    _textView.textColor = [UIColor blackColor];
+    _textView.font = [UIFont boldSystemFontOfSize:15.0];
+    _textView.text = @"Appli créé par Johan Delouche pour le projet iOS de l'ISMIN M&S.\nÀ destination de Marian Paul.\n";
+    [self.view addSubview:_textView];
 }
 
 - (void)didReceiveMemoryWarning

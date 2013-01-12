@@ -14,4 +14,9 @@
     return [[_name stringByAppendingString:@" de "] stringByAppendingString:_year];
 }
 
+-(NSString*) getInfos {
+
+    return [[[[self.toString stringByAppendingString:@"\nprovenance : "] stringByAppendingString:_origin] stringByAppendingString:@"\nprix : "] stringByAppendingString:_price];
+}
+
 @end
