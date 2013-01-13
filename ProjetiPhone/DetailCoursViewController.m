@@ -27,30 +27,36 @@
 {
     [super viewDidLoad];
     
-   
+    participe = NO;
     
 	// Do any additional setup after loading the view.
     //view experimental dimension 320*367 because of tabbar
     _labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 367)];
-    _labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 280, 30)];
     _labelColumn1 = [[UILabel alloc] initWithFrame:CGRectMake(20, 50, 130, 150)];
     _labelColumn2 = [[UILabel alloc] initWithFrame:CGRectMake(170, 50, 130, 150)];
     _mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, 210, 280, 150)];
+       _buttonParticipation = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    _buttonParticipation.frame = CGRectMake(20,20,200,30);
+    [_buttonParticipation setTitle:@"Je ne participe pas" forState:UIControlStateNormal];
+    [_buttonParticipation addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
     
     [_mapView setScrollEnabled:YES];
     [_mapView setShowsUserLocation:YES];
-    
     [_mapView setZoomEnabled:YES];
     
     _labelColumn1.numberOfLines = 0;
     _labelColumn2.numberOfLines = 0;
+    
+    
+    _labelColumn1.text = _infos;
+    _labelColumn2.text = _wines;
 
     
     // Définir le zoom
     MKCoordinateSpan span;
-    span.latitudeDelta = 0.05;
-    span.longitudeDelta = 0.05;
+    span.latitudeDelta = 0.01;
+    span.longitudeDelta = 0.01;
     // Définir les coordonnées
     CLLocationCoordinate2D coordinates;
     coordinates.latitude = [_latitude doubleValue];
@@ -68,18 +74,25 @@
      */
     
     [self.view addSubview:_labelBackground];
-    [self.view addSubview:_labelTitle];
     [self.view addSubview:_labelColumn1];
     [self.view addSubview:_labelColumn2];
     [self.view addSubview:_mapView];
+    [self.view addSubview:_buttonParticipation];
     
-     
-    _labelTitle.text = _titleToShow;
-    [_labelTitle setTextAlignment:NSTextAlignmentCenter];
-    [_labelTitle setFont:[UIFont fontWithName:@"Helvetica-Bold" size:20]];
     
-    _labelColumn1.text = _infos;
-    _labelColumn2.text = _wines;
+    
+}
+
+-(void)buttonPressed:(id)sender{
+    if (participe) {
+        participe = !participe;
+        [_buttonParticipation setTitle:@"Je ne participe pas" forState:UIControlStateNormal];
+        [_buttonParticipation setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
+    } else {
+        participe = !participe;
+        [_buttonParticipation setTitle:@"Je participe" forState:UIControlStateNormal];
+       [_buttonParticipation setTitleColor: [UIColor greenColor] forState:UIControlStateNormal];
+    }
     
 }
 

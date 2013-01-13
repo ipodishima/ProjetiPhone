@@ -36,6 +36,18 @@
 		0477AF7F161C7B2C007442FB /* WineListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF7E161C7B2C007442FB /* WineListViewController.m */; };
 		0477AF81161C7D3C007442FB /* 142-wine-bottle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0477AF80161C7D3C007442FB /* 142-wine-bottle.png */; };
 		0477AF87161C7EEC007442FB /* DetailWineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF86161C7EEC007442FB /* DetailWineViewController.m */; };
+		047ACDF116A2F70200901B69 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047ACDF016A2F70200901B69 /* FacebookSDK.framework */; };
+		047ACDF316A2F79000901B69 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 047ACDF216A2F79000901B69 /* FacebookSDKResources.bundle */; };
+		047ACDF516A2F7BA00901B69 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 047ACDF416A2F7BA00901B69 /* FBUserSettingsViewResources.bundle */; };
+		047ACDF916A2F7FA00901B69 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047ACDF616A2F7FA00901B69 /* Accounts.framework */; };
+		047ACDFA16A2F7FA00901B69 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047ACDF716A2F7FA00901B69 /* AdSupport.framework */; };
+		047ACDFB16A2F7FA00901B69 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047ACDF816A2F7FA00901B69 /* Social.framework */; };
+		047ACE0516A2FF8D00901B69 /* action-eating.png in Resources */ = {isa = PBXBuildFile; fileRef = 047ACE0116A2FF8D00901B69 /* action-eating.png */; };
+		047ACE0616A2FF8D00901B69 /* action-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 047ACE0216A2FF8D00901B69 /* action-location.png */; };
+		047ACE0716A2FF8D00901B69 /* action-people.png in Resources */ = {isa = PBXBuildFile; fileRef = 047ACE0316A2FF8D00901B69 /* action-people.png */; };
+		047ACE0816A2FF8D00901B69 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 047ACE0416A2FF8D00901B69 /* facebook.png */; };
+		047ACE0C16A3001000901B69 /* SCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047ACE0A16A3001000901B69 /* SCLoginViewController.m */; };
+		047ACE0D16A3001000901B69 /* SCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047ACE0B16A3001000901B69 /* SCLoginViewController.xib */; };
 		04A472DF169F448F00BEF38B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A472DE169F448F00BEF38B /* MapKit.framework */; };
 		04A47DB21624429600791595 /* 70-tv.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A47DB11624429600791595 /* 70-tv.png */; };
 		04A47DB5162442CD00791595 /* VideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A47DB4162442CD00791595 /* VideoListViewController.m */; };
@@ -112,6 +124,19 @@
 		0477AF80161C7D3C007442FB /* 142-wine-bottle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "142-wine-bottle.png"; sourceTree = "<group>"; };
 		0477AF85161C7EEC007442FB /* DetailWineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailWineViewController.h; sourceTree = "<group>"; };
 		0477AF86161C7EEC007442FB /* DetailWineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailWineViewController.m; sourceTree = "<group>"; };
+		047ACDF016A2F70200901B69 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		047ACDF216A2F79000901B69 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		047ACDF416A2F7BA00901B69 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+		047ACDF616A2F7FA00901B69 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		047ACDF716A2F7FA00901B69 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		047ACDF816A2F7FA00901B69 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		047ACE0116A2FF8D00901B69 /* action-eating.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-eating.png"; sourceTree = "<group>"; };
+		047ACE0216A2FF8D00901B69 /* action-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-location.png"; sourceTree = "<group>"; };
+		047ACE0316A2FF8D00901B69 /* action-people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "action-people.png"; sourceTree = "<group>"; };
+		047ACE0416A2FF8D00901B69 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		047ACE0916A3001000901B69 /* SCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLoginViewController.h; sourceTree = "<group>"; };
+		047ACE0A16A3001000901B69 /* SCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLoginViewController.m; sourceTree = "<group>"; };
+		047ACE0B16A3001000901B69 /* SCLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SCLoginViewController.xib; sourceTree = "<group>"; };
 		04A472DE169F448F00BEF38B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		04A47DB11624429600791595 /* 70-tv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "70-tv.png"; sourceTree = "<group>"; };
 		04A47DB3162442CD00791595 /* VideoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListViewController.h; sourceTree = "<group>"; };
@@ -149,11 +174,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047ACDF916A2F7FA00901B69 /* Accounts.framework in Frameworks */,
+				047ACDFA16A2F7FA00901B69 /* AdSupport.framework in Frameworks */,
+				047ACDFB16A2F7FA00901B69 /* Social.framework in Frameworks */,
 				04A472DF169F448F00BEF38B /* MapKit.framework in Frameworks */,
 				04A47E1A16245F7800791595 /* MediaPlayer.framework in Frameworks */,
 				046B20121619CBB3003DF181 /* UIKit.framework in Frameworks */,
 				046B20141619CBB3003DF181 /* Foundation.framework in Frameworks */,
 				046B20161619CBB3003DF181 /* CoreGraphics.framework in Frameworks */,
+				047ACDF116A2F70200901B69 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +214,9 @@
 		046B20021619CBB3003DF181 = {
 			isa = PBXGroup;
 			children = (
+				047ACDF616A2F7FA00901B69 /* Accounts.framework */,
+				047ACDF716A2F7FA00901B69 /* AdSupport.framework */,
+				047ACDF816A2F7FA00901B69 /* Social.framework */,
 				046B20171619CBB3003DF181 /* ProjetiPhone */,
 				046B20351619CBB3003DF181 /* ProjetiPhoneTests */,
 				046B20101619CBB3003DF181 /* Frameworks */,
@@ -204,6 +236,9 @@
 		046B20101619CBB3003DF181 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				047ACDF416A2F7BA00901B69 /* FBUserSettingsViewResources.bundle */,
+				047ACDF216A2F79000901B69 /* FacebookSDKResources.bundle */,
+				047ACDF016A2F70200901B69 /* FacebookSDK.framework */,
 				04A472DE169F448F00BEF38B /* MapKit.framework */,
 				04A47E1916245F7800791595 /* MediaPlayer.framework */,
 				046B20111619CBB3003DF181 /* UIKit.framework */,
@@ -287,9 +322,13 @@
 		0477AF71161C679A007442FB /* Profil */ = {
 			isa = PBXGroup;
 			children = (
-				0477AF72161C67F5007442FB /* MyProfilViewController.h */,
 				0477AF73161C67F5007442FB /* MyProfilViewController.m */,
+				0477AF72161C67F5007442FB /* MyProfilViewController.h */,
 				0477AF77161C6939007442FB /* 111-user.png */,
+				047ACE0916A3001000901B69 /* SCLoginViewController.h */,
+				047ACE0A16A3001000901B69 /* SCLoginViewController.m */,
+				047ACE0B16A3001000901B69 /* SCLoginViewController.xib */,
+				047ACE0016A2FF8D00901B69 /* images */,
 			);
 			name = Profil;
 			sourceTree = "<group>";
@@ -306,6 +345,17 @@
 				04DD5DA816A1ED1F0059AE4F /* vins.json */,
 			);
 			name = Wine;
+			sourceTree = "<group>";
+		};
+		047ACE0016A2FF8D00901B69 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				047ACE0116A2FF8D00901B69 /* action-eating.png */,
+				047ACE0216A2FF8D00901B69 /* action-location.png */,
+				047ACE0316A2FF8D00901B69 /* action-people.png */,
+				047ACE0416A2FF8D00901B69 /* facebook.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		04A47DAF1624421600791595 /* Video */ = {
@@ -465,6 +515,13 @@
 				04A47E1F1624661700791595 /* 45-movie-1.png in Resources */,
 				046A4C401639278200D51C39 /* cours.json in Resources */,
 				04DD5DA916A1ED1F0059AE4F /* vins.json in Resources */,
+				047ACDF316A2F79000901B69 /* FacebookSDKResources.bundle in Resources */,
+				047ACDF516A2F7BA00901B69 /* FBUserSettingsViewResources.bundle in Resources */,
+				047ACE0516A2FF8D00901B69 /* action-eating.png in Resources */,
+				047ACE0616A2FF8D00901B69 /* action-location.png in Resources */,
+				047ACE0716A2FF8D00901B69 /* action-people.png in Resources */,
+				047ACE0816A2FF8D00901B69 /* facebook.png in Resources */,
+				047ACE0D16A3001000901B69 /* SCLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +577,7 @@
 				046A4C44163927D900D51C39 /* Cours.m in Sources */,
 				046A4C47163928A500D51C39 /* Wine.m in Sources */,
 				046A4C4A1639306600D51C39 /* Location.m in Sources */,
+				047ACE0C16A3001000901B69 /* SCLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,9 +673,15 @@
 		046B20411619CBB4003DF181 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjetiPhone/ProjetiPhone-Prefix.pch";
 				INFOPLIST_FILE = "ProjetiPhone/ProjetiPhone-Info.plist";
+				New_Setting = "";
+				"OTHER_LDFLAGS[arch=*]" = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -626,9 +690,15 @@
 		046B20421619CBB4003DF181 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ProjetiPhone/ProjetiPhone-Prefix.pch";
 				INFOPLIST_FILE = "ProjetiPhone/ProjetiPhone-Info.plist";
+				New_Setting = "";
+				"OTHER_LDFLAGS[arch=*]" = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

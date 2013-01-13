@@ -13,6 +13,7 @@
 #import "VideoListViewController.h"
 #import "AboutViewController.h"
 #import "CommandeListViewController.h"
+#import "SCLoginViewController.h"
 
 @implementation AppDelegate
 
@@ -24,10 +25,24 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     
+    // See if we have a valid token for the current state.
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        NSLog(@"session");
+        // To-do, show logged in view
+    } else {
+        NSLog(@"no session");
+        // No, display the login page.
+        //[self showLoginView];
+    }
     
+    SCLoginViewController *myProfilVC = [[SCLoginViewController alloc] init];
+    UITabBarItem *tabBarItem0 = [[UITabBarItem alloc] initWithTitle:@"Mon Profil" image:[UIImage imageNamed:@"111-user.png"] tag:0];
+    myProfilVC.tabBarItem = tabBarItem0;
+    /*
     MyProfilViewController *myProfilVC = [[MyProfilViewController alloc] init];
     UITabBarItem *tabBarItem0 = [[UITabBarItem alloc] initWithTitle:@"Mon Profil" image:[UIImage imageNamed:@"111-user.png"] tag:0];
     myProfilVC.tabBarItem = tabBarItem0;
+     */
     
     AboutViewController *aboutVC = [[AboutViewController alloc] init];
     UITabBarItem *tabBarItem4 = [[UITabBarItem alloc] initWithTitle:@"À Propos" image:[UIImage imageNamed:@"90-life-buoy.png"] tag:4];
@@ -100,11 +115,21 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSession.activeSession handleDidBecomeActive];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [self.session close];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    // attempt to extract a token from the url
+    return [self.session handleOpenURL:url];
 }
 
 @end

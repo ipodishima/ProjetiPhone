@@ -13,16 +13,16 @@
 @interface DetailCoursViewController : UIViewController {
 
     UILabel *_labelBackground;
-    UILabel *_labelTitle;
     UILabel *_labelColumn1;
     UILabel *_labelColumn2;
     MKMapView *_mapView;
-    
+    UIButton *_buttonParticipation;
+    BOOL participe;
 
     
 }
 
-@property NSString *titleToShow;
+
 @property NSString *latitude;
 @property NSString *longitude;
 @property NSString *infos;

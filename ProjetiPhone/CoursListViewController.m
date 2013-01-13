@@ -137,8 +137,7 @@
    
     DetailCoursViewController *detailCoursVC = [[DetailCoursViewController alloc] init];
     Cours *cours = [_listOfCours objectAtIndex:[indexPath row]];
-
-    detailCoursVC.titleToShow = cours.title;
+    detailCoursVC.title = cours.title;
     detailCoursVC.latitude = cours.location.latitude;
     detailCoursVC.longitude = cours.location.longitude;
     detailCoursVC.infos = [[[[[[cours.agenda stringByAppendingString: @"\n"] stringByAppendingString: cours.date] stringByAppendingString: @"\n"] stringByAppendingString: [cours.location.street stringByAppendingString:@" "]] stringByAppendingString: [cours.location.city stringByAppendingString:@" "]] stringByAppendingString: cours.location.country];

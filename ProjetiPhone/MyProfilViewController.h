@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyProfilViewController : UIViewController
+
+@interface MyProfilViewController : UIViewController {
+    UILabel *_labelText;
+    UITextView *_address;
+    UITextView *_number;
+    
+}
 
 @end

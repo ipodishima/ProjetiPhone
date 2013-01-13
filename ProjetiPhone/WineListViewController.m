@@ -125,6 +125,7 @@
     DetailWineViewController *detailWineVC = [[DetailWineViewController alloc] init];
     Wine *wine = [_listOfWine objectAtIndex:[indexPath row]];
     
+    detailWineVC.title = wine.name;
     detailWineVC.textToShow = [wine getInfos];
     
     [self.navigationController pushViewController:detailWineVC animated:YES];
