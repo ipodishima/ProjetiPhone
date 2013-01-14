@@ -7,7 +7,7 @@
 //
 
 #import "VideoListViewController.h"
-#import "DetailVideoViewController.h"
+
 
 @interface VideoListViewController ()
 
@@ -28,7 +28,16 @@
 {
     [super viewDidLoad];
     
-    _listOfVideo = [[NSArray alloc] initWithObjects:@"video 1", @"video 2",@"video 3", @"video 4",@"video 5",@"video 6",@"video 7",@"video 8",@"video 9", nil];
+    
+    Video *video1 = [[Video alloc] init];
+    video1.title = @"Initiation à l'oenologie";
+    video1.link = @"http://www.youtube.com/watch?v=n98F00RoSls";
+    
+    Video *video2 = [[Video alloc] init];
+    video2.title = @"Le nez des vins blancs";
+    video2.link = @"http://www.youtube.com/watch?v=R03jfNUO-1Y";
+    
+    _listOfVideo = [[NSArray alloc] initWithObjects:video1, video2, nil];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -71,8 +80,8 @@
         cell.textLabel.textAlignment = NSTextAlignmentCenter;
         cell.imageView.image = [UIImage imageNamed:@"45-movie-1.png"];
     }
-    
-    cell.textLabel.text = [_listOfVideo objectAtIndex:[indexPath row]];
+    Video *v = [_listOfVideo objectAtIndex:[indexPath row]];
+    cell.textLabel.text = v.title;
     
     return cell;
 }
@@ -120,15 +129,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
     DetailVideoViewController *detailVideoVC = [[DetailVideoViewController alloc] init];
-    detailVideoVC.textToShow = [_listOfVideo objectAtIndex:[indexPath row]];
+    Video *v = [_listOfVideo objectAtIndex:[indexPath row]];
+    detailVideoVC.title = v.title;
+    detailVideoVC.URL = v.link;
     [self.navigationController pushViewController:detailVideoVC animated:YES];
 }
 

@@ -67,6 +67,7 @@
 		04A47E1A16245F7800791595 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A47E1916245F7800791595 /* MediaPlayer.framework */; };
 		04A47E1D162465AE00791595 /* 87-wine-glass.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A47E1C162465AD00791595 /* 87-wine-glass.png */; };
 		04A47E1F1624661700791595 /* 45-movie-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04A47E1E1624661700791595 /* 45-movie-1.png */; };
+		04D4B3A416A40B300079A964 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D4B3A316A40B300079A964 /* Video.m */; };
 		04DD5DA916A1ED1F0059AE4F /* vins.json in Resources */ = {isa = PBXBuildFile; fileRef = 04DD5DA816A1ED1F0059AE4F /* vins.json */; };
 /* End PBXBuildFile section */
 
@@ -166,6 +167,8 @@
 		04A47E1916245F7800791595 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		04A47E1C162465AD00791595 /* 87-wine-glass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "87-wine-glass.png"; sourceTree = "<group>"; };
 		04A47E1E1624661700791595 /* 45-movie-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "45-movie-1.png"; sourceTree = "<group>"; };
+		04D4B3A216A40B300079A964 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		04D4B3A316A40B300079A964 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
 		04DD5DA816A1ED1F0059AE4F /* vins.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vins.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -362,11 +365,13 @@
 			isa = PBXGroup;
 			children = (
 				04A47DB11624429600791595 /* 70-tv.png */,
-				04A47DB3162442CD00791595 /* VideoListViewController.h */,
 				04A47E1E1624661700791595 /* 45-movie-1.png */,
 				04A47DB4162442CD00791595 /* VideoListViewController.m */,
+				04A47DB3162442CD00791595 /* VideoListViewController.h */,
 				04A47DB61624444700791595 /* DetailVideoViewController.h */,
 				04A47DB71624444700791595 /* DetailVideoViewController.m */,
+				04D4B3A316A40B300079A964 /* Video.m */,
+				04D4B3A216A40B300079A964 /* Video.h */,
 			);
 			name = Video;
 			sourceTree = "<group>";
@@ -578,6 +583,7 @@
 				046A4C47163928A500D51C39 /* Wine.m in Sources */,
 				046A4C4A1639306600D51C39 /* Location.m in Sources */,
 				047ACE0C16A3001000901B69 /* SCLoginViewController.m in Sources */,
+				04D4B3A416A40B300079A964 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,10 +10,10 @@
 #import "LBYouTubePlayerViewController.h"
 
 @interface DetailVideoViewController : UIViewController <LBYouTubePlayerControllerDelegate> {
-    UILabel *_label;
+
 }
 
 @property (nonatomic, strong) LBYouTubePlayerViewController *controller;
-@property NSString *textToShow;
+@property NSString *URL;
 
 @end

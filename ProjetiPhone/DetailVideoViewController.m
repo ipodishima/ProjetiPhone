@@ -27,15 +27,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(20,20, 200, 30)];
-    [self.view addSubview:_label];
-    _label.text = _textToShow;
-    
-    
-    LBYouTubePlayerViewController* controller = [[LBYouTubePlayerViewController alloc] initWithYouTubeURL:[NSURL URLWithString:@"http://www.youtube.com/watch?v=1fTIhC1WSew&list=FLEYfH4kbq85W_CiOTuSjf8w&feature=mh_lolz"] quality:LBYouTubeVideoQualityLarge];
+
+        
+    LBYouTubePlayerViewController* controller = [[LBYouTubePlayerViewController alloc] initWithYouTubeURL:[NSURL URLWithString:self.URL] quality:LBYouTubeVideoQualityLarge];
     controller.delegate = self;
-    controller.view.frame = CGRectMake(0.0f, 0.0f, 200.0f, 200.0f);
+    controller.view.frame = CGRectMake(0, 0, 200, 200);
     controller.view.center = self.view.center;
     self.controller = controller;
     

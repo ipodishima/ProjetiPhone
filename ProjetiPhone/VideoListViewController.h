@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailVideoViewController.h"
+#import "Video.h"
 
 @interface VideoListViewController : UITableViewController {
     NSArray *_listOfVideo;
