@@ -34,15 +34,15 @@
         // No, display the login page.
         //[self showLoginView];
     }
-    /*
+    
     SCLoginViewController *myProfilVC = [[SCLoginViewController alloc] init];
     UITabBarItem *tabBarItem0 = [[UITabBarItem alloc] initWithTitle:@"Mon Profil" image:[UIImage imageNamed:@"111-user.png"] tag:0];
     myProfilVC.tabBarItem = tabBarItem0;
-    */
+    /*
     MyProfilViewController *myProfilVC = [[MyProfilViewController alloc] init];
     UITabBarItem *tabBarItem0 = [[UITabBarItem alloc] initWithTitle:@"Mon Profil" image:[UIImage imageNamed:@"111-user.png"] tag:0];
     myProfilVC.tabBarItem = tabBarItem0;
-     
+     */
     
     AboutViewController *aboutVC = [[AboutViewController alloc] init];
     UITabBarItem *tabBarItem4 = [[UITabBarItem alloc] initWithTitle:@"À Propos" image:[UIImage imageNamed:@"90-life-buoy.png"] tag:4];

@@ -202,6 +202,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041F0A4A16A4547800212B39 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Facebook;
+			sourceTree = "<group>";
+		};
 		046A4C4B1639341900D51C39 /* Download is not that easy ! */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +262,7 @@
 		046B20171619CBB3003DF181 /* ProjetiPhone */ = {
 			isa = PBXGroup;
 			children = (
+				041F0A4A16A4547800212B39 /* Facebook */,
 				046A4C4B1639341900D51C39 /* Download is not that easy ! */,
 				04A47E1B162461CD00791595 /* SubModule */,
 				04A47DBE16244C3400791595 /* Commande */,

@@ -37,6 +37,8 @@
 {
     [super viewDidLoad];
     
+    [self updateView];
+    
     AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     if (!appDelegate.session.isOpen) {
         // create a fresh session object
@@ -59,15 +61,23 @@
 
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+- (void)updateView {
+    // get the app delegate, so that we can reference the session property
+    AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    if (appDelegate.session.isOpen) {
+        // valid account UI is shown whenever the session is open
+        [self.buttonLoginLogout setTitle:@"Log out" forState:UIControlStateNormal];
+        [self.textNoteOrLink setText:[NSString stringWithFormat:@"https://graph.facebook.com/me/friends?access_token=%@",
+                                      appDelegate.session.accessToken]];
     } else {
-        return YES;
+        // login-needed account UI is shown whenever the session is closed
+        [self.buttonLoginLogout setTitle:@"Log in" forState:UIControlStateNormal];
+        [self.textNoteOrLink setText:@"Login to create a link to fetch account data"];
     }
 }
+
+
+
 
 - (IBAction)buttonClickHandler:(id)sender {
     // get the app delegate so that we can access the session property
@@ -98,25 +108,34 @@
 }
 
 
-- (void)updateView {
-    // get the app delegate, so that we can reference the session property
-    AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
-    if (appDelegate.session.isOpen) {
-        // valid account UI is shown whenever the session is open
-        [self.buttonLoginLogout setTitle:@"Log out" forState:UIControlStateNormal];
-        [self.textNoteOrLink setText:[NSString stringWithFormat:@"https://graph.facebook.com/me/friends?access_token=%@",
-                                      appDelegate.session.accessToken]];
-    } else {
-        // login-needed account UI is shown whenever the session is closed
-        [self.buttonLoginLogout setTitle:@"Log in" forState:UIControlStateNormal];
-        [self.textNoteOrLink setText:@"Login to create a link to fetch account data"];
-    }
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark Template generated code
+
+- (void)viewDidUnload
+{
+    self.buttonLoginLogout = nil;
+    self.textNoteOrLink = nil;
+    
+    [super viewDidUnload];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    } else {
+        return YES;
+    }
+}
+
+#pragma mark -
+
 
 @end
