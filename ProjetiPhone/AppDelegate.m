@@ -21,7 +21,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.tabBarController = [[UITabBarController alloc] init];
-
+    
+    [FBProfilePictureView class];
     
     self.window.backgroundColor = [UIColor whiteColor];
     
@@ -34,15 +35,15 @@
         // No, display the login page.
         //[self showLoginView];
     }
-    
+    /*
     SCLoginViewController *myProfilVC = [[SCLoginViewController alloc] init];
     UITabBarItem *tabBarItem0 = [[UITabBarItem alloc] initWithTitle:@"Mon Profil" image:[UIImage imageNamed:@"111-user.png"] tag:0];
     myProfilVC.tabBarItem = tabBarItem0;
-    /*
+    */
     MyProfilViewController *myProfilVC = [[MyProfilViewController alloc] init];
     UITabBarItem *tabBarItem0 = [[UITabBarItem alloc] initWithTitle:@"Mon Profil" image:[UIImage imageNamed:@"111-user.png"] tag:0];
     myProfilVC.tabBarItem = tabBarItem0;
-     */
+     
     
     AboutViewController *aboutVC = [[AboutViewController alloc] init];
     UITabBarItem *tabBarItem4 = [[UITabBarItem alloc] initWithTitle:@"À Propos" image:[UIImage imageNamed:@"90-life-buoy.png"] tag:4];
@@ -121,7 +122,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    [self.session close];
+    [FBSession.activeSession close];
 }
 
 - (BOOL)application:(UIApplication *)application
@@ -129,7 +130,7 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
     // attempt to extract a token from the url
-    return [self.session handleOpenURL:url];
+    return [FBSession.activeSession handleOpenURL:url];
 }
 
 @end

@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 
 @interface MyProfilViewController : UIViewController {
-    UITextView *_text;
+    UITextView *_name;
     UITextView *_address;
     UITextView *_number;
+    UIButton *_post;
     
+    FBLoginView *_loginview;
     NSTimer *_timerForColorAnimation;
+    FBProfilePictureView *_profilPictureView;
     
 }
 

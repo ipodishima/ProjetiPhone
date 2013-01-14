@@ -7,9 +7,9 @@
 //
 
 #import "SCLoginViewController.h"
-#import "AppDelegate.h"
 
-@interface SCLoginViewController ()
+
+@interface SCLoginViewController () 
 
 @property (strong, nonatomic) IBOutlet UIButton *buttonLoginLogout;
 @property (strong, nonatomic) IBOutlet UITextView *textNoteOrLink;
@@ -39,6 +39,8 @@
     
     [self updateView];
     
+    
+    
     AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     if (!appDelegate.session.isOpen) {
         // create a fresh session object
@@ -57,6 +59,7 @@
             }];
         }
     }
+
     
 
 }
