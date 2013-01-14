@@ -31,7 +31,7 @@
         
     LBYouTubePlayerViewController* controller = [[LBYouTubePlayerViewController alloc] initWithYouTubeURL:[NSURL URLWithString:self.URL] quality:LBYouTubeVideoQualityLarge];
     controller.delegate = self;
-    controller.view.frame = CGRectMake(0, 0, 200, 200);
+    controller.view.frame = [[UIScreen mainScreen] bounds];
     controller.view.center = self.view.center;
     self.controller = controller;
     

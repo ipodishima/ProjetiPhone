@@ -10,9 +10,11 @@
 
 
 @interface MyProfilViewController : UIViewController {
-    UILabel *_labelText;
+    UITextView *_text;
     UITextView *_address;
     UITextView *_number;
+    
+    NSTimer *_timerForColorAnimation;
     
 }
 

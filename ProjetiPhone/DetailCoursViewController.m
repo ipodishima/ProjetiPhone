@@ -38,6 +38,8 @@
        _buttonParticipation = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     _buttonParticipation.frame = CGRectMake(20,20,200,30);
     [_buttonParticipation setTitle:@"Je ne participe pas" forState:UIControlStateNormal];
+    [_buttonParticipation setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
+   
     [_buttonParticipation addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
     
@@ -65,6 +67,7 @@
     region.span = span;
     region.center = coordinates;
     [_mapView setRegion:region animated:YES];
+    
    
     /*
     _labelBackground.backgroundColor = [UIColor redColor];
@@ -87,7 +90,7 @@
     if (participe) {
         participe = !participe;
         [_buttonParticipation setTitle:@"Je ne participe pas" forState:UIControlStateNormal];
-        [_buttonParticipation setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
+       [_buttonParticipation setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
     } else {
         participe = !participe;
         [_buttonParticipation setTitle:@"Je participe" forState:UIControlStateNormal];

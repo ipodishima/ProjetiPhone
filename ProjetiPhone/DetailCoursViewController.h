@@ -18,6 +18,7 @@
     MKMapView *_mapView;
     UIButton *_buttonParticipation;
     BOOL participe;
+    
 
     
 }
