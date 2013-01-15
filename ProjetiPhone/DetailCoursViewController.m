@@ -7,8 +7,12 @@
 //
 
 #import "DetailCoursViewController.h"
+#import <CoreLocation/CoreLocation.h>
+
 
 @interface DetailCoursViewController ()
+
+-(void)buttonPressed:(id)sender;
 
 @end
 
@@ -27,7 +31,12 @@
 {
     [super viewDidLoad];
     
-    participe = NO;
+    
+    pref=[NSUserDefaults standardUserDefaults];
+    [pref synchronize];
+    
+    participe = [pref boolForKey:[@"Participe" stringByAppendingString:self.title]];
+   
     
 	// Do any additional setup after loading the view.
     //view experimental dimension 320*367 because of tabbar
@@ -37,11 +46,15 @@
     _mapView = [[MKMapView alloc] initWithFrame:CGRectMake(20, 210, 280, 150)];
        _buttonParticipation = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     _buttonParticipation.frame = CGRectMake(20,20,200,30);
-    [_buttonParticipation setTitle:@"Je ne participe pas" forState:UIControlStateNormal];
-    [_buttonParticipation setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
-   
     [_buttonParticipation addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
+    if (participe) {
+        [_buttonParticipation setTitle:@"Je participe" forState:UIControlStateNormal];
+        [_buttonParticipation setTitleColor: [UIColor greenColor] forState:UIControlStateNormal];
+    } else {
+        [_buttonParticipation setTitle:@"Je ne participe pas" forState:UIControlStateNormal];
+        [_buttonParticipation setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
+    }
     
     [_mapView setScrollEnabled:YES];
     [_mapView setShowsUserLocation:YES];
@@ -68,6 +81,13 @@
     region.center = coordinates;
     [_mapView setRegion:region animated:YES];
     
+ 
+    
+    MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
+    annotationPoint.coordinate = coordinates;
+    annotationPoint.title = self.title;
+    [_mapView addAnnotation:annotationPoint];
+    
    
     /*
     _labelBackground.backgroundColor = [UIColor redColor];
@@ -90,11 +110,15 @@
     if (participe) {
         participe = !participe;
         [_buttonParticipation setTitle:@"Je ne participe pas" forState:UIControlStateNormal];
-       [_buttonParticipation setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
+        [_buttonParticipation setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
+        [pref setBool:participe forKey:[@"Participe" stringByAppendingString:self.title]];
+        [pref synchronize];
     } else {
         participe = !participe;
         [_buttonParticipation setTitle:@"Je participe" forState:UIControlStateNormal];
-       [_buttonParticipation setTitleColor: [UIColor greenColor] forState:UIControlStateNormal];
+        [_buttonParticipation setTitleColor: [UIColor greenColor] forState:UIControlStateNormal];
+        [pref setBool:participe forKey:[@"Participe" stringByAppendingString:self.title]];
+        [pref synchronize];
     }
     
 }

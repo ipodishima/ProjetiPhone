@@ -27,6 +27,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    _text = [[UITextView alloc] initWithFrame:CGRectMake(20,20, 250, 50)];
+    [self.view addSubview:_text];
+    self.title = _commande.name;
+    _text.text = [NSString stringWithFormat: @"Vous avez commandez %@ %@" , _commande.number, _commande.name];
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,9 +39,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(20,20, 200, 30)];
-    [self.view addSubview:_label];
-    _label.text = _textToShow;
+    
 }
 
 @end

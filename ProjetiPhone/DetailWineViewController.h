@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Commande.h"
 
 @interface DetailWineViewController : UIViewController {
     UILabel *_label;
+    UIButton *_commander;
+    NSUserDefaults *_pref;
 }
 
 @property NSString *textToShow;

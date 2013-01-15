@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Commande.h"
 
 @interface DetailCommandeViewController : UIViewController {
-    UILabel *_label;
+    UITextView *_text;
 }
 
-@property NSString *textToShow;
+@property Commande *commande;
 
 @end

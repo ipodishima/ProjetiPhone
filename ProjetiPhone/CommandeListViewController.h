@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Commande.h"
 
 @interface CommandeListViewController : UITableViewController {
-    NSArray *_listOfCommande;
+    NSMutableArray *_listOfCommande;
+    NSUserDefaults *pref;
 }
 
 @end

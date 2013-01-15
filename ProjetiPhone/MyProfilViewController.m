@@ -40,8 +40,8 @@
     
     
     [_loginview sizeToFit];
-    
-    _post = [[UIButton alloc] initWithFrame:CGRectMake(190, 150, 80, 30)];
+    _post = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    _post.frame = CGRectMake(190, 150, 80, 30);
     [_post setTitle:@"Post" forState:UIControlStateNormal];
     [_post addTarget:self action:@selector(postStatusUpdate:) forControlEvents:UIControlEventTouchUpInside];
     _post.backgroundColor = [UIColor whiteColor];

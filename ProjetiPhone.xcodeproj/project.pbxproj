@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		041AFD881647E19200905A6F /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C4D1639343100D51C39 /* DownloadManager.m */; };
 		041AFD8A1647E1E500905A6F /* DownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C4F1639343100D51C39 /* DownloadOperation.m */; };
+		041F0A5916A5682600212B39 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041F0A5816A5682600212B39 /* CoreLocation.framework */; };
+		041F0A5C16A5952200212B39 /* Commande.m in Sources */ = {isa = PBXBuildFile; fileRef = 041F0A5B16A5952200212B39 /* Commande.m */; };
 		046A4C401639278200D51C39 /* cours.json in Resources */ = {isa = PBXBuildFile; fileRef = 046A4C3F1639278200D51C39 /* cours.json */; };
 		046A4C44163927D900D51C39 /* Cours.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C43163927D900D51C39 /* Cours.m */; };
 		046A4C47163928A500D51C39 /* Wine.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A4C46163928A500D51C39 /* Wine.m */; };
@@ -26,8 +28,6 @@
 		046B20301619CBB3003DF181 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046B202F1619CBB3003DF181 /* SenTestingKit.framework */; };
 		046B20311619CBB3003DF181 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046B20111619CBB3003DF181 /* UIKit.framework */; };
 		046B20321619CBB3003DF181 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046B20131619CBB3003DF181 /* Foundation.framework */; };
-		046B203A1619CBB4003DF181 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 046B20381619CBB4003DF181 /* InfoPlist.strings */; };
-		046B203D1619CBB4003DF181 /* ProjetiPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046B203C1619CBB4003DF181 /* ProjetiPhoneTests.m */; };
 		0477AF70161C65E7007442FB /* CoursListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF6F161C65E7007442FB /* CoursListViewController.m */; };
 		0477AF74161C67F5007442FB /* MyProfilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0477AF73161C67F5007442FB /* MyProfilViewController.m */; };
 		0477AF76161C6900007442FB /* 140-gradhat.png in Resources */ = {isa = PBXBuildFile; fileRef = 0477AF75161C6900007442FB /* 140-gradhat.png */; };
@@ -82,6 +82,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041F0A5816A5682600212B39 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		041F0A5A16A5952200212B39 /* Commande.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commande.h; sourceTree = "<group>"; };
+		041F0A5B16A5952200212B39 /* Commande.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commande.m; sourceTree = "<group>"; };
 		046A4C3F1639278200D51C39 /* cours.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cours.json; sourceTree = "<group>"; };
 		046A4C42163927D900D51C39 /* Cours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cours.h; sourceTree = "<group>"; };
 		046A4C43163927D900D51C39 /* Cours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cours.m; sourceTree = "<group>"; };
@@ -108,10 +111,6 @@
 		046B20271619CBB3003DF181 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		046B202E1619CBB3003DF181 /* ProjetiPhoneTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetiPhoneTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		046B202F1619CBB3003DF181 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		046B20371619CBB4003DF181 /* ProjetiPhoneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjetiPhoneTests-Info.plist"; sourceTree = "<group>"; };
-		046B20391619CBB4003DF181 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		046B203B1619CBB4003DF181 /* ProjetiPhoneTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjetiPhoneTests.h; sourceTree = "<group>"; };
-		046B203C1619CBB4003DF181 /* ProjetiPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjetiPhoneTests.m; sourceTree = "<group>"; };
 		0477AF6E161C65E7007442FB /* CoursListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursListViewController.h; sourceTree = "<group>"; };
 		0477AF6F161C65E7007442FB /* CoursListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursListViewController.m; sourceTree = "<group>"; };
 		0477AF72161C67F5007442FB /* MyProfilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfilViewController.h; sourceTree = "<group>"; };
@@ -177,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041F0A5916A5682600212B39 /* CoreLocation.framework in Frameworks */,
 				047ACDF916A2F7FA00901B69 /* Accounts.framework in Frameworks */,
 				047ACDFA16A2F7FA00901B69 /* AdSupport.framework in Frameworks */,
 				047ACDFB16A2F7FA00901B69 /* Social.framework in Frameworks */,
@@ -217,11 +217,11 @@
 		046B20021619CBB3003DF181 = {
 			isa = PBXGroup;
 			children = (
+				041F0A5816A5682600212B39 /* CoreLocation.framework */,
 				047ACDF616A2F7FA00901B69 /* Accounts.framework */,
 				047ACDF716A2F7FA00901B69 /* AdSupport.framework */,
 				047ACDF816A2F7FA00901B69 /* Social.framework */,
 				046B20171619CBB3003DF181 /* ProjetiPhone */,
-				046B20351619CBB3003DF181 /* ProjetiPhoneTests */,
 				046B20101619CBB3003DF181 /* Frameworks */,
 				046B200E1619CBB3003DF181 /* Products */,
 			);
@@ -280,25 +280,6 @@
 				04A47DCF1624540000791595 /* Default.png */,
 				046B20251619CBB3003DF181 /* Default@2x.png */,
 				046B20271619CBB3003DF181 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		046B20351619CBB3003DF181 /* ProjetiPhoneTests */ = {
-			isa = PBXGroup;
-			children = (
-				046B203B1619CBB4003DF181 /* ProjetiPhoneTests.h */,
-				046B203C1619CBB4003DF181 /* ProjetiPhoneTests.m */,
-				046B20361619CBB4003DF181 /* Supporting Files */,
-			);
-			path = ProjetiPhoneTests;
-			sourceTree = "<group>";
-		};
-		046B20361619CBB4003DF181 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				046B20371619CBB4003DF181 /* ProjetiPhoneTests-Info.plist */,
-				046B20381619CBB4003DF181 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -389,11 +370,13 @@
 		04A47DBE16244C3400791595 /* Commande */ = {
 			isa = PBXGroup;
 			children = (
-				04A47DC216244C7300791595 /* CommandeListViewController.h */,
-				04A47DC516244C9200791595 /* DetailCommandeViewController.h */,
-				04A47DC616244C9200791595 /* DetailCommandeViewController.m */,
-				04A47DC816244EAF00791595 /* 172-pricetag.png */,
 				04A47DC316244C7300791595 /* CommandeListViewController.m */,
+				04A47DC216244C7300791595 /* CommandeListViewController.h */,
+				04A47DC616244C9200791595 /* DetailCommandeViewController.m */,
+				04A47DC516244C9200791595 /* DetailCommandeViewController.h */,
+				04A47DC816244EAF00791595 /* 172-pricetag.png */,
+				041F0A5A16A5952200212B39 /* Commande.h */,
+				041F0A5B16A5952200212B39 /* Commande.m */,
 			);
 			name = Commande;
 			sourceTree = "<group>";
@@ -534,7 +517,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046B203A1619CBB4003DF181 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +566,7 @@
 				046A4C4A1639306600D51C39 /* Location.m in Sources */,
 				047ACE0C16A3001000901B69 /* SCLoginViewController.m in Sources */,
 				04D4B3A416A40B300079A964 /* Video.m in Sources */,
+				041F0A5C16A5952200212B39 /* Commande.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,7 +574,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046B203D1619CBB4003DF181 /* ProjetiPhoneTests.m in Sources */,
 				046A4C511639343100D51C39 /* DownloadManager.m in Sources */,
 				046A4C521639343100D51C39 /* DownloadOperation.m in Sources */,
 			);
@@ -612,14 +594,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				046B201B1619CBB3003DF181 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		046B20381619CBB4003DF181 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				046B20391619CBB4003DF181 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
