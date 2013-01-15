@@ -35,10 +35,12 @@
     
     _listOfCommande = [[NSMutableArray alloc] init];
 
-    
+    //idéalement les clés devraient être récupéré dynamiquement
     NSString *s1 = [pref objectForKey:@"Bordeaux"];
     NSString *s2 = [pref objectForKey:@"Pinot Gris"];
     NSString *s3 = [pref objectForKey:@"Gewürztraminer"];
+    
+    //vérification de la nulité des objets avant de les insérer
     
     if (s1 != nil) {
         Commande *c = [[Commande alloc] init];

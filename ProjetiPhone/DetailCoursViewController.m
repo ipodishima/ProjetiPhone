@@ -88,13 +88,7 @@
     annotationPoint.title = self.title;
     [_mapView addAnnotation:annotationPoint];
     
-   
-    /*
-    _labelBackground.backgroundColor = [UIColor redColor];
-    _labelTitle.backgroundColor = [UIColor yellowColor];
-    _labelColumn1.backgroundColor = [UIColor greenColor];
-    _labelColumn2.backgroundColor = [UIColor blueColor];
-     */
+
     
     [self.view addSubview:_labelBackground];
     [self.view addSubview:_labelColumn1];

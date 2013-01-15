@@ -24,6 +24,8 @@
 @synthesize textNoteOrLink = _textNoteOrLink;
 @synthesize buttonLoginLogout = _buttonLoginLogout;
 
+//premiere implémentation du login logout de facebook, non utilisée
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

@@ -49,6 +49,7 @@
 - (void)commander:(UIButton *)sender {
     NSLog(@"commande");
     
+    //j'utilse le nom des vins comme clé pour les différencier
     NSString *s = [_pref objectForKey:self.title];
     if (s == nil) {
         NSLog(@"s == nil");
