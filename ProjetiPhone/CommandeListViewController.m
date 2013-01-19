@@ -27,14 +27,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
     //Je n'ai pas réussi à mettre à jour en temps réelle les commandes. ça ne fonctionne qu'au lancement.
-    
+    // M: Il suffit de le mettre dans viewWillAppear
     pref=[NSUserDefaults standardUserDefaults];
-    [pref synchronize];
+    
+    // M: Pas obligatoire, ça se fait tout seul
+    //    [pref synchronize];
     
     _listOfCommande = [[NSMutableArray alloc] init];
-
+    
     //idéalement les clés devraient être récupéré dynamiquement
     NSString *s1 = [pref objectForKey:@"Bordeaux"];
     NSString *s2 = [pref objectForKey:@"Pinot Gris"];
@@ -47,28 +54,26 @@
         c.name = @"Bordeaux";
         c.number = s1;
         [_listOfCommande addObject:c];
-
+        
     }
     if (s2 != nil) {
         Commande *c = [[Commande alloc] init];
         c.name = @"Pinot Gris";
         c.number = s2;
         [_listOfCommande addObject:c];
-
+        
     }
     if (s3 != nil) {
         Commande *c = [[Commande alloc] init];
         c.name = @"Gewürztraminer";
         c.number = s3;
         [_listOfCommande addObject:c];
-
-    }
-
-    
         
+    }
+    
+    // M: Rechargement de la table view
+    [self.tableView reloadData];
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {

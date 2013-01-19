@@ -53,10 +53,20 @@
     NSString *s = [_pref objectForKey:self.title];
     if (s == nil) {
         NSLog(@"s == nil");
-        s = [[NSString alloc] init];
+        
+        // M: Faire un alloc init + une affectation = @"0" est redondant. D'un côté tu pointes vers une nouvelle case mémoire 0x01 et de l'autre, tu repointes vers une deuxième 0x02. La première est inutile du coup.
+        // Pour la petite histoire, c'était une erreur redondante des débutants avant ARC (Automatic Reference Counting) qui générait des fuites mémoires en pagaille.
+        // s = [[NSString alloc] init];
         s = @"0";
     }
     s = [NSString stringWithFormat:@"%d", [s intValue]+1];
+    
+    // Pour plus d'optimisation : (éviter une allocation de @"0" juste pour récupérer 0
+//    NSString *s = [_pref objectForKey:self.title];
+//    if (s == nil)
+//        s = @"1";
+//    else
+//        s = [NSString stringWithFormat:@"%d", [s intValue]+1];
     
     [_pref  setObject:s forKey:self.title];
     [_pref synchronize];
