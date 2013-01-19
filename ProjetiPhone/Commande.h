@@ -11,6 +11,6 @@
 @interface Commande : NSObject
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *number;
+@property (nonatomic, strong) NSNumber *number;
 
 @end

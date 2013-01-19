@@ -33,6 +33,30 @@
 {
     [super viewWillAppear:animated];
     
+    pref= [NSUserDefaults standardUserDefaults];
+    
+    _listOfCommande = [[NSMutableArray alloc] init];
+    
+    NSDictionary *wineDic = [pref objectForKey:@"WineDic"];
+    NSArray *allKeys = [wineDic allKeys];
+    
+    for (NSString *str in allKeys)
+    {
+        Commande *c = [[Commande alloc] init];
+        c.name = str;
+        c.number = wineDic[str];
+        [_listOfCommande addObject:c];
+    }
+    
+    // M: Rechargement de la table view
+    [self.tableView reloadData];
+}
+
+
+- (void) old_viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
     //Je n'ai pas réussi à mettre à jour en temps réelle les commandes. ça ne fonctionne qu'au lancement.
     // M: Il suffit de le mettre dans viewWillAppear
     pref=[NSUserDefaults standardUserDefaults];

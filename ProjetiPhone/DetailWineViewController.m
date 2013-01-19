@@ -49,6 +49,28 @@
 - (void)commander:(UIButton *)sender {
     NSLog(@"commande");
     
+    // Récupérer le dictionnaire des vins
+    NSMutableDictionary *wineDic = [NSMutableDictionary dictionaryWithDictionary:[_pref objectForKey:@"WineDic"]];
+    
+    // Récupérer le nombre de commande enregistré
+    NSNumber *command = wineDic[self.title];
+    
+    if (!command) {
+        NSLog(@"No command yet");
+        command = [NSNumber numberWithInt:1];
+    }
+    else
+        command = [NSNumber numberWithInt:[command intValue]+1];
+    
+    wineDic[self.title] = command;
+    
+    [_pref  setObject:wineDic forKey:@"WineDic"];
+    [_pref synchronize];
+}
+
+- (void)old_commander:(UIButton *)sender {
+    NSLog(@"commande");
+    
     //j'utilse le nom des vins comme clé pour les différencier
     NSString *s = [_pref objectForKey:self.title];
     if (s == nil) {
@@ -62,11 +84,11 @@
     s = [NSString stringWithFormat:@"%d", [s intValue]+1];
     
     // Pour plus d'optimisation : (éviter une allocation de @"0" juste pour récupérer 0
-//    NSString *s = [_pref objectForKey:self.title];
-//    if (s == nil)
-//        s = @"1";
-//    else
-//        s = [NSString stringWithFormat:@"%d", [s intValue]+1];
+    //    NSString *s = [_pref objectForKey:self.title];
+    //    if (s == nil)
+    //        s = @"1";
+    //    else
+    //        s = [NSString stringWithFormat:@"%d", [s intValue]+1];
     
     [_pref  setObject:s forKey:self.title];
     [_pref synchronize];
