@@ -140,6 +140,9 @@
     detailCoursVC.title = cours.title;
     detailCoursVC.latitude = cours.location.latitude;
     detailCoursVC.longitude = cours.location.longitude;
+    
+    // M: Ahahah ;)
+    // Ok, j'avais dit qu'on pouvait enchainer beaucoup d'appels, mais ça devient illisible !
     detailCoursVC.infos = [[[[[[cours.agenda stringByAppendingString: @"\n"] stringByAppendingString: cours.date] stringByAppendingString: @"\n"] stringByAppendingString: [cours.location.street stringByAppendingString:@" "]] stringByAppendingString: [cours.location.city stringByAppendingString:@" "]] stringByAppendingString: cours.location.country];
     
     NSString *res = [[NSMutableString alloc] init];

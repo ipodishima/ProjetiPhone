@@ -35,6 +35,7 @@
     pref=[NSUserDefaults standardUserDefaults];
     [pref synchronize];
     
+    // M: Cf commit de correction de la liste des vins, il peut-être judicieux d'utiliser un dictionnaire contenant comme clés les titres des cours, et comme valeur participe / participe pas (1 / 0)
     participe = [pref boolForKey:[@"Participe" stringByAppendingString:self.title]];
    
     
